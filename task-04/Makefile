@@ -19,6 +19,9 @@ CFLAGS += -DDEVELHELP
 QUIET ?= 1
 
 # Modules to include:
+USEMODULE += shell
+USEMODULE += shell_commands
+USEMODULE += ps
 USEMODULE += xtimer
 
 include $(RIOTBASE)/Makefile.include
