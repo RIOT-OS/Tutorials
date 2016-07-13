@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   width="110mm"
+   height="58.235mm"
+   viewBox="0 0 595 315"
+   version="1.1">
+  <title>pktbuf — duplication mechanism</title>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work rdf:about="Provides an example for the duplication mechanism">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>pktbuf — duplication mechanism</dc:title>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Martine Lenders</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <style type="text/css">
+      <![CDATA[
+        .header {
+          line-height: 125%;
+          fill: #000000;
+          font-family: 'CMU Sans Serif';
+          font-weight: bold;
+          font-size: 16px;
+          text-anchor: middle;
+        }
+        .snip,.memory {
+          fill: none;
+          stroke: #000000;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-width: 1;
+        }
+        .memory-skip {
+          fill: none;
+          stroke: #000000;
+          stroke-dasharray: 1,3;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-width: 1;
+        }
+        .snip-text {
+          line-height: 125%;
+          fill: #000000;
+          font-family: 'CMU Sans Serif';
+          font-size: 11px;
+          text-anchor: middle;
+        }
+        .snip-text-ref {
+          line-height: 125%;
+          fill: #000000;
+          font-family: 'Source Code Pro';
+          font-size: 11px;
+          text-anchor: middle;
+        }
+        .pointer {
+          fill: none;
+          marker-end: url(#pointer-end);
+          stroke: #000000;
+          stroke-width: 0.75;
+        }
+        .pointer-text {
+          line-height: 125%;
+          fill: #000000;
+          font-family: 'Source Code Pro';
+          font-size: 8px;
+          text-anchor: start;
+        }
+        .right {
+          text-anchor: end;
+        }
+
+        #pointer-end path {
+          fill: none;
+          stroke: #000000;
+        }
+
+        .app {
+          fill: #ff99ff;
+        }
+        .tport {
+          fill: #9999ff;
+        }
+        .net {
+          fill: #99ffbb;
+        }
+        .adpt {
+          fill: #ffff99;
+        }
+        .l2 {
+          fill: #ffd699;
+        }
+      ]]>
+    </style>
+    <marker
+       orient="auto"
+       refX="-4.0"
+       refY="0.0"
+       id="pointer-end"
+       style="overflow:visible;">
+      <path d="m -10,-2.5 5,2.5 -5,2.5" />
+    </marker>
+  </defs>
+  <g>
+    <text x="160" y="20" class="header">Packet in transmission</text>
+    <g id="netif-header1" transform="translate(60,30)">
+      <rect x="0" y="0" width="90" height="40" class="snip l2" />
+      <text x="45" y="14" class="snip-text"><tspan class="snip-text-ref">netif</tspan> header</text>
+      <path d="m 0,20 90,0" class="snip" />
+      <text x="45" y="34" class="snip-text-ref"><tspan>users = 1</tspan></text>
+      <path d="m 45,40 0,20" class="pointer" />
+      <text x="50" y="48" class="pointer-text"><tspan>next</tspan></text>
+    </g>
+    <g id="netif-header2" transform="translate(170,30)">
+      <rect x="0" y="0" width="90" height="40" class="snip l2" />
+      <text x="45" y="14" class="snip-text"><tspan class="snip-text-ref">netif</tspan> header</text>
+      <path d="m 0,20 90,0" class="snip" />
+      <text x="45" y="34" class="snip-text-ref"><tspan>users = 1</tspan></text>
+      <path d="m 45,40 0,20" class="pointer" />
+      <text x="50" y="48" class="pointer-text"><tspan>next</tspan></text>
+    </g>
+    <g id="6lo-header" transform="translate(60,90)">
+      <rect x="0" y="0" width="90" height="40" class="snip adpt" />
+      <text x="45" y="14" class="snip-text"><tspan>6Lo header</tspan></text>
+      <path d="m 0,20 90,0" class="snip" />
+      <text x="45" y="34" class="snip-text-ref"><tspan>users = 1</tspan></text>
+      <path d="m 45,40 0,20" class="pointer" />
+      <text x="50" y="48" class="pointer-text"><tspan>next</tspan></text>
+    </g>
+    <g id="ipv6-header1" transform="translate(170,90)">
+      <rect x="0" y="0" width="90" height="40" class="snip net" />
+      <text x="45" y="14" class="snip-text"><tspan>IPv6 header</tspan></text>
+      <path d="m 0,20 90,0" class="snip" />
+      <text x="45" y="34" class="snip-text-ref"><tspan>users = 1</tspan></text>
+      <path d="m 45,40 0,20 -10,10 -55,0" class="pointer" />
+      <text x="50" y="48" class="pointer-text"><tspan>next</tspan></text>
+    </g>
+    <g id="icmp-header" transform="translate(60,150)">
+      <rect x="0" y="0" width="90" height="40" class="snip tport" />
+      <text x="45" y="14" class="snip-text"><tspan>ICMPv6 header</tspan></text>
+      <path d="m 0,20 90,0" class="snip" />
+      <text x="45" y="34" class="snip-text-ref"><tspan>users = 2</tspan></text>
+      <path d="m 45,40 0,20" class="pointer" />
+      <text x="50" y="48" class="pointer-text"><tspan>next</tspan></text>
+    </g>
+    <g id="icmp payload" transform="translate(60,210)">
+      <rect x="0" y="0" width="90" height="40" class="snip app" />
+      <text x="45" y="14" class="snip-text"><tspan>ICMPv6 payload</tspan></text>
+      <path d="m 0,20 90,0" class="snip" />
+      <text x="45" y="34" class="snip-text-ref"><tspan>users = 2</tspan></text>
+    </g>
+  </g>
+  <g>
+    <text x="465" y="20" class="header">Packet in reception</text>
+    <g id="udp-payload1" transform="translate(365,30)">
+      <rect x="0" y="0" width="90" height="40" class="snip app" />
+      <text x="45" y="14" class="snip-text"><tspan>UDP payload</tspan></text>
+      <path d="m 0,20 90,0" class="snip" />
+      <text x="45" y="34" class="snip-text-ref"><tspan>users = 1</tspan></text>
+      <path d="m 45,40 0,20" class="pointer" />
+      <text x="50" y="48" class="pointer-text"><tspan>next</tspan></text>
+    </g>
+    <g id="udp-payload2" transform="translate(475,30)">
+      <rect x="0" y="0" width="90" height="40" class="snip app" />
+      <text x="45" y="14" class="snip-text"><tspan>UDP payload</tspan></text>
+      <path d="m 0,20 90,0" class="snip" />
+      <text x="45" y="34" class="snip-text-ref"><tspan>users = 1</tspan></text>
+      <path d="m 45,40 0,20 -10,10 -55,0" class="pointer" />
+      <text x="50" y="48" class="pointer-text"><tspan>next</tspan></text>
+    </g>
+    <g id="udp-header" transform="translate(365,90)">
+      <rect x="0" y="0" width="90" height="40" class="snip tport" />
+      <text x="45" y="14" class="snip-text"><tspan>UDP header</tspan></text>
+      <path d="m 0,20 90,0" class="snip" />
+      <text x="45" y="34" class="snip-text-ref"><tspan>users = 2</tspan></text>
+      <path d="m 45,40 0,20" class="pointer" />
+      <text x="50" y="48" class="pointer-text"><tspan>next</tspan></text>
+    </g>
+    <g id="ipv6-header2" transform="translate(365,150)">
+      <rect x="0" y="0" width="90" height="40" class="snip net" />
+      <text x="45" y="14" class="snip-text"><tspan>IPv6 header</tspan></text>
+      <path d="m 0,20 90,0" class="snip" />
+      <text x="45" y="34" class="snip-text-ref"><tspan>users = 2</tspan></text>
+      <path d="m 45,40 0,20" class="pointer" />
+      <text x="50" y="48" class="pointer-text"><tspan>next</tspan></text>
+    </g>
+    <g id="netif-header3" transform="translate(365,210)">
+      <rect x="0" y="0" width="90" height="40" class="snip l2" />
+      <text x="45" y="14" class="snip-text"><tspan class="snip-text-ref">netif</tspan> header</text>
+      <path d="m 0,20 90,0" class="snip" />
+      <text x="45" y="34" class="snip-text-ref"><tspan>users = 2</tspan></text>
+    </g>
+  </g>
+  <g>
+    <rect x="70" y="290" width="20" height="20" class="l2" />
+    <rect x="90" y="290" width="10" height="20" class="adpt" />
+    <rect x="100" y="290" width="30" height="20" class="tport" />
+    <rect x="130" y="290" width="30" height="20" class="app" />
+    <rect x="185" y="290" width="20" height="20" class="l2" />
+    <rect x="205" y="290" width="90" height="20" class="net" />
+    <rect x="355" y="290" width="20" height="20" class="l2" />
+    <rect x="375" y="290" width="90" height="20" class="net" />
+    <rect x="465" y="290" width="30" height="20" class="tport" />
+    <rect x="495" y="290" width="20" height="20" class="app" />
+    <rect x="540" y="290" width="20" height="20" class="app" />
+    <path d="M 55,290 65,290" class="memory-skip" />
+    <path d="M 65,290 165,290" class="memory" />
+    <path d="M 165,290 180,290" class="memory-skip" />
+    <path d="M 180,290 300,290" class="memory" />
+    <path d="M 300,290 350,290" class="memory-skip" />
+    <path d="M 350,290 520,290" class="memory" />
+    <path d="M 520,290 535,290" class="memory-skip" />
+    <path d="M 535,290 565,290" class="memory" />
+    <path d="M 565,290 575,290" class="memory-skip" />
+    <path d="m 70,290 0,20" class="memory" />
+    <path d="m 90,290 0,20" class="memory" />
+    <path d="m 100,290 0,20" class="memory" />
+    <path d="m 130,290 0,20" class="memory" />
+    <path d="m 160,290 0,20" class="memory" />
+    <path d="m 185,290 0,20" class="memory" />
+    <path d="m 205,290 0,20" class="memory" />
+    <path d="m 295,290 0,20" class="memory" />
+    <path d="m 355,290 0,20" class="memory" />
+    <path d="m 375,290 0,20" class="memory" />
+    <path d="m 465,290 0,20" class="memory" />
+    <path d="m 495,290 0,20" class="memory" />
+    <path d="m 515,290 0,20" class="memory" />
+    <path d="m 540,290 0,20" class="memory" />
+    <path d="m 560,290 0,20" class="memory" />
+    <path d="M 55,310 65,310" class="memory-skip" />
+    <path d="M 65,310 165,310" class="memory" />
+    <path d="M 165,310 180,310" class="memory-skip" />
+    <path d="M 180,310 300,310" class="memory" />
+    <path d="M 300,310 350,310" class="memory-skip" />
+    <path d="M 350,310 520,310" class="memory" />
+    <path d="M 520,310 535,310" class="memory-skip" />
+    <path d="M 535,310 565,310" class="memory" />
+    <path d="M 565,310 575,310" class="memory-skip" />
+    <path d="M 60,50 5,50 5,280 70,280 70,290" class="pointer" />
+    <path d="M 260,50 295,50 295,280 207,280 A 2,2 0 0,0 203,280 L 185,280 185,290" class="pointer" />
+    <path d="M 365,50 310,50 310,280 353,280 A 2,2 0 0,1 357,280 L 373,280 A 2,2 0 0,1 377,280 L 463,280 A 2,2 0 0,1 467,280 L 495,280 495,290" class="pointer" />
+    <path d="M 565,50 590,50 590,270 540,270 540,290" class="pointer" />
+    <path d="M 60,110 15,110 15,275 90,275 90,290" class="pointer" />
+    <path d="M 260,110 285,110 285,275 205,275 205,290" class="pointer" />
+    <path d="M 365,110 320,110 320,275 353,275 A 2,2 0 0,1 357,275 L 373,275 A 2,2 0 0,1 377,275 L 465,275 465,290" class="pointer" />
+    <path d="M 60,170 25,170 25,270 100,270 100,290" class="pointer" />
+    <path d="M 365,170 330,170 330,270 353,270 A 2,2 0 0,1 357,270 L 375,270 375,290" class="pointer" />
+    <path d="M 60,230 35,230 35,265 130,265 130,290" class="pointer" />
+    <path d="M 365,230 340,230 340,265 355,265 355,290" class="pointer" />
+    <text x="55" y="47" class="pointer-text right">data</text>
+    <text x="265" y="47" class="pointer-text">data</text>
+    <text x="360" y="47" class="pointer-text right">data</text>
+    <text x="570" y="47" class="pointer-text">data</text>
+    <text x="55" y="107" class="pointer-text right">data</text>
+    <text x="265" y="107" class="pointer-text">data</text>
+    <text x="360" y="107" class="pointer-text right">data</text>
+    <text x="55" y="167" class="pointer-text right">data</text>
+    <text x="360" y="167" class="pointer-text right">data</text>
+    <text x="55" y="227" class="pointer-text right">data</text>
+    <text x="360" y="227" class="pointer-text right">data</text>
+  </g>
+</svg>

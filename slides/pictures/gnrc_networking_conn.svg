@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version="1.1" width="110mm" height="68.457mm"
+     viewBox="0 0 940 585"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg">
+  <title>gnrc_networking on samr21-xpro</title>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work rdf:about="Example use-case for gnrc_networking">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>gnrc_networking on samr21-xpro</dc:title>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Martine Lenders</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <style type="text/css">
+        .modbox-text {
+          line-height: 125%;
+          fill: #000000;
+          font-family: 'CMU Sans Serif';
+          font-size: 20px;
+          text-anchor: middle;
+        }
+        .submodbox-text {
+          line-height: 125%;
+          fill: #000000;
+          font-family: 'CMU Sans Serif';
+          font-size: 15px;
+          text-anchor: middle;
+        }
+        .legend {
+          fill: #000000;
+          font-family: 'CMU Sans Serif';
+          font-size: 22px;
+          text-anchor: start;
+          text-align: center;
+        }
+        .modbox {
+          fill: #ffffff;
+          stroke: #000000;
+          stroke-miterlimit: 4;
+          stroke-miterjoin: round;
+          stroke-width: 1;
+        }
+        .submodbox {
+          fill: #ffffff;
+        }
+        rect.thread {
+          fill: #6D8BAC;
+        }
+        .outer-text {
+          line-height: 125%;
+          fill: #003366;
+          font-family: 'CMU Sans Serif';
+          font-size: 22px;
+          text-anchor: middle;
+        }
+        .outer-text-netapi {
+          line-height: 125%;
+          fill: #000000;
+          font-family: 'CMU Sans Serif';
+          font-size: 20px;
+          text-anchor: start;
+        }
+        .outer-stroke {
+          fill: #C5D2E4;
+          stroke: none;
+        }
+        #gnrc-detail-conn {
+          fill: none;
+          stroke: url(#outer-gradient-conn);
+          stroke-linejoin: miter;
+          stroke-miterlimit: 4;
+          stroke-width: 3;
+        }
+        #gnrc-detail-netdev {
+          fill: none;
+          stroke: url(#outer-gradient-netdev);
+          stroke-linejoin: miter;
+          stroke-miterlimit: 4;
+          stroke-width: 3;
+        }
+        .thread-marker {
+          fill: none;
+          stroke: #dddddd;
+          marker-end: url(#thread-marker-end);
+          stroke-width: 3;
+        }
+        .outer-stroke-dashed {
+          fill: none;
+          stroke: #000000;
+          stroke-dasharray: 9, 9;
+          stroke-linejoin: miter;
+          stroke-miterlimit: 4;
+          stroke-width: 3;
+        }
+        .outer-stroke-dotted {
+          fill: none;
+          stroke: #000000;
+          stroke-dasharray: 1, 5;
+          stroke-linejoin: miter;
+          stroke-miterlimit: 4;
+          stroke-width: 3;
+        }
+        .outer-stroke-arrow {
+          fill: none;
+          marker-start: url(#arrow-start);
+          marker-end: url(#arrow-end);
+          stroke: #000000;
+          stroke-linejoin: miter;
+          stroke-miterlimit: 4;
+          stroke-width: 3;
+        }
+        .outer-arrow-head {
+          fill: #000000;
+          fill-rule: evenodd;
+          stroke: #000000;
+          stroke-width: 1pt;
+        }
+        .thread-marker-head {
+          fill: #dddddd;
+        }
+
+        #gnrc-conn-box,#microcoap-box {
+          fill: #ff99ff;
+        }
+        #gnrc-tcp-box,#gnrc-udp-box {
+          fill: #9999ff;
+        }
+        #gnrc-ipv6-box {
+          fill: #99ffbb;
+        }
+        #gnrc-ipv6 .submodbox {
+          fill: #ccffdd;
+        }
+        #gnrc-6lo-box {
+          fill: #ffff99;
+        }
+        .mac-box {
+          fill: #ffd699;
+        }
+        .mac-group .submodbox {
+          fill: #ffebcc;
+        }
+        .appl {
+          fill: #ffeeff;
+        }
+        .tl {
+          fill: #eeeeff;
+        }
+        .nl {
+          fill: #eefff0;
+        }
+        .adpl {
+          fill: #ffffee;
+        }
+        .ll {
+          fill: #fff5ee;
+        }
+        .pl {
+          fill: #ffeeee;
+        }
+        .codebox {
+          line-height: 125%;
+          fill: #000000;
+          font-family: 'Source Code Pro';
+          font-size: 20px;
+          text-anchor: left;
+        }
+        .codebox .codebox-variable {
+          line-height: 125%;
+          fill: #0066cc;
+          font-family: 'Source Code Pro';
+          font-size: 20px;
+          text-anchor: left;
+        }
+    </style>
+    <linearGradient id="outer-gradient-conn" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop style="stop-color: #000000; stop-opacity: 0;" offset="0" />
+      <stop style="stop-color: #000000; stop-opacity: 0;" offset="0.1" />
+      <stop style="stop-color: #000000; stop-opacity: 1;" offset="0.9" />
+      <stop style="stop-color: #000000; stop-opacity: 1;" offset="1" />
+    </linearGradient>
+    <linearGradient id="outer-gradient-netdev" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop style="stop-color: #000000; stop-opacity: 1;" offset="0" />
+      <stop style="stop-color: #000000; stop-opacity: 1;" offset="0.1" />
+      <stop style="stop-color: #000000; stop-opacity: 0;" offset="0.9" />
+      <stop style="stop-color: #000000; stop-opacity: 0;" offset="1" />
+    </linearGradient>
+    <marker style="overflow: visible" id="arrow-start" orient="auto">
+      <path class="outer-arrow-head" d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+            transform="matrix(0.2,0,0,0.2,1.2,0)" />
+    </marker>
+    <marker style="overflow: visible" id="arrow-end" orient="auto">
+      <path class="outer-arrow-head" d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+            transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
+    </marker>
+    <marker style="overflow: visible" id="thread-marker-end" orient="auto">
+      <path class="thread-marker-head" d="M 1,0 -1,1.3 -1,-1.3 z" transform="rotate(20)" />
+    </marker>
+  </defs>
+  <rect class="appl" x="0" y="0" width="1500" height="145" />
+  <rect class="tl" x="0" y="145" width="1500" height="80" />
+  <rect class="nl" x="0" y="225" width="1500" height="80" />
+  <rect class="adpl" x="0" y="305" width="1500" height="80" />
+  <rect class="ll" x="0" y="385" width="1500" height="150" />
+  <rect class="pl" x="0" y="535" width="1500" height="80" />
+  <g id="gnrc-detail" transform="translate(5,0)">
+    <g id="application-border">
+      <rect id="application-border-box" class="outer-stroke" x="0" y="5"
+            width="380" height="70" rx="10" ry="10" />
+      <text id="application-border-label" class="outer-text"
+            x="190.5" y="45"><tspan>Application / Library</tspan></text>
+    </g>
+    <g id="gnrc-detail-gnrc" transform="translate(0,80)">
+      <rect id="sys-net-border" class="outer-stroke" x="0" y="37.5"
+            width="380" height="312.5" rx="10" ry="10" />
+      <rect id="hardware-border-box" class="outer-stroke" x="0" y="420"
+            width="380" height="80" rx="10" ry="10" />
+      <rect id="hardware-6lo-thread-box" class="thread" x="5" y="315"
+            width="370" height="140" />
+      <rect id="gnrc-udp-thread" class="thread" x="5" y="75"
+            width="175" height="60" />
+      <rect id="gnrc-ipv6-thread" class="thread" x="5" y="155"
+            width="370" height="60" />
+      <rect id="gnrc-6lo-thread" class="thread" x="5" y="235"
+            width="370" height="60" />
+      <g id="gnrc-conn">
+        <rect id="gnrc-conn-box" class="modbox" x="10" y="25"
+              width="360" height="25" />
+        <text id="gnrc-conn-label" class="modbox-text"
+              x="190.5" y="42"><tspan>gnrc_conn</tspan></text>
+      </g>
+      <g id="conn-app">
+        <path id="conn-app-arrow" d="m 190.5,0 0,20" class="outer-stroke-arrow" />
+        <text id="conn-app-label" class="outer-text-netapi"
+              x="197" y="14.5"><tspan>conn</tspan></text>
+      </g>
+      <g id="netapi-conn-udp">
+        <path id="netapi-conn-udp-arrow" d="m 92.5,55 0,20" class="outer-stroke-arrow" />
+        <text id="netapi-conn-udp-label" class="outer-text-netapi"
+              x="99" y="71"><tspan>netapi</tspan></text>
+      </g>
+      <g id="netapi-conn-ipv6">
+        <path id="netapi-conn-ipv6-arrow" d="m 287.5,55 0,100" class="outer-stroke-arrow" />
+        <text id="netapi-conn-ipv6-label" class="outer-text-netapi"
+              x="294" y="112"><tspan>netapi</tspan></text>
+      </g>
+      <g id="gnrc-udp" class="thread">
+        <rect id="gnrc-udp-box" class="modbox" x="10" y="80"
+              width="165" height="50" />
+        <text id="gnrc-udp-label" class="modbox-text"
+              x="92.5" y="112"><tspan>gnrc_udp</tspan></text>
+        <path class="thread-marker" d="M 170 80 a 5 5 0 1 0 1.464 -3.536" />
+      </g>
+      <g id="netapi-udp-ipv6">
+        <path id="netapi-udp-ipv6-arrow" d="m 92.5,135 0,20" class="outer-stroke-arrow" />
+        <text id="netapi-udp-ipv6-label" class="outer-text-netapi"
+              x="99" y="151"><tspan>netapi</tspan></text>
+      </g>
+      <g id="gnrc-ipv6" class="thread">
+        <rect id="gnrc-ipv6-box" class="modbox" x="10" y="160"
+              width="360" height="50">
+        </rect>
+        <text id="gnrc-ipv6-label" class="modbox-text"
+              x="190" y="180"><tspan>gnrc_ipv6</tspan></text>
+        <rect class="submodbox" x="138" y="185" width="105" height="23" />
+        <text id="gnrc-6Lo-ND-6LBR-label" class="submodbox-text"
+              x="190.5" y="202"><tspan>6Lo-ND[6LR]</tspan></text>
+        <path class="thread-marker" d="M 365 160 a 5 5 0 1 0 1.464 -3.536" />
+      </g>
+    <g id="hardware-border">
+      <text id="hardware-border-label" class="outer-text"
+            x="190.5" y="480"><tspan>Hardware</tspan></text>
+    </g>
+      <g id="netapi-ipv6-6lo">
+        <path id="netapi-ipv6-6lo-arrow" d="m 190.5,215 0,20" class="outer-stroke-arrow" />
+        <text id="netapi-ipv6-6lo-label" class="outer-text-netapi"
+              x="197" y="231"><tspan>netapi</tspan></text>
+      </g>
+      <g id="gnrc-6lo" class="thread">
+        <rect id="gnrc-6lo-box" class="modbox" x="10" y="240"
+              width="360" height="50" />
+        <text id="gnrc-6lo-label" class="modbox-text"
+              x="190.5" y="272"><tspan>gnrc_sixlowpan</tspan></text>
+        <path class="thread-marker" d="M 365 240 a 5 5 0 1 0 1.464 -3.536" />
+      </g>
+      <g id="netapi-6lo-netdev">
+        <path id="netapi-6lo-netdev-arrow" d="m 190.5,295 0,20" class="outer-stroke-arrow" />
+        <text id="netapi-6lo-netdev-label" class="outer-text-netapi"
+              x="197" y="311"><tspan>netapi</tspan></text>
+      </g>
+      <g id="gnrc-netdev-6lo" class="mac-group">
+        <rect id="netdev-6lo-box" class="modbox mac-box" x="10" y="320"
+              width="360" height="50" />
+        <text id="netdev-6lo-label" class="modbox-text"
+              x="190.5" y="340"><tspan>gnrc_netdev</tspan></text>
+        <rect class="submodbox" x="15" y="345" width="350" height="23" />
+        <text id="gnrc-netdev-eth-label" class="submodbox-text"
+              x="190.5" y="362"><tspan>gnrc_netdev_ieee802154</tspan></text>
+        <path class="thread-marker" d="M 365 320 a 5 5 0 1 0 1.464 -3.536" />
+        <path id="netdev-6lo-arrow" d="m 190.5,375 0,20" class="outer-stroke-arrow" />
+        <text id="netdev-6lo-label" class="outer-text-netapi"
+              x="197" y="391"><tspan>netdev</tspan></text>
+        <rect id="netdev-6lo-drive-box" class="modbox mac-box" x="10" y="400"
+              width="360" height="50" />
+        <text id="netdev-6lo-driver-label" class="modbox-text"
+              x="190.5" y="432"><tspan>at86rf2xx</tspan></text>
+      </g>
+    </g>
+    <g class="codebox">
+      <text x="390" y="103" id="make-gnrc_udp"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_conn_udp</text>
+      <text x="390" y="132" id="make-gnrc_udp"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_conn_ip</text>
+      <text x="390" y="192" id="make-gnrc_udp"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_udp</text>
+      <text x="390" y="272" id="make-gnrc_ipv6"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_ipv6_router_default</text>
+      <text x="390" y="432" id="make-auto_init_gnrc_netdev"><tspan class="codebox-variable">USEMODULE</tspan> += auto_init_gnrc_netdev*</text>
+      <text x="390" y="512" id="make-auto_init_gnrc_netdev"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_netdev_default*</text>
+    </g>
+  </g>
+</svg>
