@@ -359,8 +359,16 @@ echo "hello" | nc -6u <RIOT-IPv6-addr>%tap0 8888
 ## `netreg`
 * How to know where to send `netapi` messages? \pause
 * Both protocol implementation and users can register to be interested in type + certain context (e.g. port in UDP)
-    * `gnrc_netreg_register(GNRC_NETTYPE_IPV6, ALL, &me)`
-    * `gnrc_netreg_register(GNRC_NETTYPE_UDP, PORT_DNS, &me)`
+
+```C
+gnrc_netreg_t ipv6_handler = { NULL, GNRC_NETREG_DEMUX_CTX_ALL,
+                               ipv6_handler_pid};
+gnrc_netreg_register(GNRC_NETTYPE_IPV6, &ipv6_handler);
+
+gnrc_netreg_t dns_handler = { NULL, PORT_DNS,
+                              dns_handler_pid};
+gnrc_netreg_register(GNRC_NETTYPE_UDP, &dns_handler);
+```
 
 $\Rightarrow$ Find handler for packets in registry
 
@@ -450,7 +458,7 @@ gnrc_netreg_register(GNRC_NETTYPE_UDP, &app);
 
 while (1) {
     msg_receive(&msg);
-    printf("Received %u UDP packets\n");
+    printf("Received %u UDP packets\n", ++count);
 }
 ```
 
