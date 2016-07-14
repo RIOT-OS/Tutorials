@@ -73,7 +73,7 @@ USEMODULE += gnrc_conn_udp
     Success: send 5 byte to fe80::207e:b9ff:fe04:9fef
     ```
 
-## Task 6.2: Communicate Linux
+## Task 6.2: Communicate with Linux
 1.  Compile and run on two `native` instances
 2.  Start a UDP server on port 8888 with `udps 8888`.
 3.  Send a packet to RIOT from Linux using `netcat`
