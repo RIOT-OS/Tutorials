@@ -223,7 +223,7 @@ USEMODULE += xtimer
 
 # General networking architecture
 ## RIOT's Networking architecture
-* Devised to integrate any network stack into RIOT
+* Designed to integrate any network stack into RIOT
 
 \only{<1>}{\includegraphics[width=\textwidth]{pictures/overview-net.pdf}}
 \only{<2>}{\includegraphics[width=\textwidth]{pictures/overview-net-netdev.pdf}}
@@ -289,7 +289,7 @@ USEMODULE += auto_init_gnrc_netif
 * Send UDP packet from second instance using `udp` command to first instance
 
 
-## Task 6.2 -- Communicate Linux
+## Task 6.2 -- Communicate with Linux
 * Compile and run a `native` instance
 * Start a UDP server on port 8888 (using `udps`)
 * Send a packet to RIOT from Linux using `netcat`
