@@ -37,3 +37,7 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 * [Task 5: Using network devices](task-05/)
 * [Task 6: Sending and receiving UDP packets](task-06/)
 * [Task 7: The GNRC network stack](task-07/)
+
+## License
+This work and all its related code and documents are licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
