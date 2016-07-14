@@ -244,17 +244,6 @@ USEMODULE += gnrc_netdev_default
 USEMODULE += auto_init_gnrc_netif
 ```
 
-* Networking with GNRC needs message queue (in `main.c`)
-
-```C
-#include "msg.h"
-#define MAIN_QUEUE_SIZE     (8)
-static msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
-/* ... */
-    msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
-/* ... */
-```
-
 ## Virtual network interface on `native`
 * Use `tapsetup` script in RIOT repository:
 
