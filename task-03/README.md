@@ -1,3 +1,5 @@
+[previous task](../task-02)
+
 # Task 3: Multithreading
 Threads in RIOT are functions with signature
 ```C

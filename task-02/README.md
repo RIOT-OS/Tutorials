@@ -1,6 +1,8 @@
+[previous task](../task-01)
+
 # Task 2: Custom shell handlers
 ## Task 2.1: A simple echo command handler
-Extend the `echo()` function in [`main.c`](main.c#L12) to print the first argument to the command handler
+Extend the `echo()` function in [`main.c`](main.c#L8) to print the first argument to the command handler
 ```c
 int cmd_handler(int argc, char **argv);
 ```

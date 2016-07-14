@@ -1,3 +1,5 @@
+[previous task](../task-04)
+
 # Task 5: Using network devices
 
 ## RIOT's Networking architecture

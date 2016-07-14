@@ -1,3 +1,5 @@
+[previous task](../task-03)
+
 # Task 4: Timers
 [`xtimer`](http://doc.riot-os.org/group__sys__xtimer.html) is the high level API of RIOT to multiplex hardware timers.
 For this task we need only the following functions

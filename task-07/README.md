@@ -1,3 +1,5 @@
+[previous task](../task-06)
+
 # Task 7: The GNRC network stack
 
 This task is a little bit more advanced so don't be discouraged if things are
