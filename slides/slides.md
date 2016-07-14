@@ -153,7 +153,7 @@ foobar
 
 # Multithreading
 ## Threads in RIOT
-* Threads in RIOT are functions with signiture
+* Threads in RIOT are functions with signature
 
 ```C
 void *thread_handler(void *arg);
@@ -197,8 +197,8 @@ pid = thread_create(stack, sizeof(stack),
 ```
 
 * Start the thread `"thread"` from within `main()`
-* Check the output (might need reset/reboot)
-* Check the existence of the thread using `ps` shell command
+* Run the application on `native`: `make all term`
+* Check your output, it should read: `I'm in "thread" now`
 
 # Timers
 ## `xtimer` primer
@@ -228,14 +228,7 @@ USEMODULE += xtimer
 \only{<1>}{\includegraphics[width=\textwidth]{pictures/overview-net.pdf}}
 \only{<2>}{\includegraphics[width=\textwidth]{pictures/overview-net-netdev.pdf}}
 
-## netdev
-- Common network device API:
-
-![](pictures/netdev-class.svg)
-
-- `isr()` method allows for getting out of ISR context
-
-## Task 5.1 -- Including the network device driver
+## Including the network device driver
 * Go to task-05 directory (`cd ../task-05`)
 * Note inclusion of `netdev` modules in Makefile
 
@@ -266,7 +259,7 @@ USEMODULE += auto_init_gnrc_netif
 ## Task 5.2 -- Use your application on real hardware
 * Compile, flash, and run on the board `BOARD=samr21-xpro make all flash term`
 * Type `ifconfig` to get your hardware addresses
-* Use `txtsnd` to send one of your neighbors a nice message
+* Use `txtsnd` to send one of your neighbors a friendly message
 
 ## RIOT's Networking architecture
 \only{<1>}{\includegraphics[width=\textwidth]{pictures/overview-net.pdf}}
@@ -297,7 +290,7 @@ USEMODULE += auto_init_gnrc_netif
 
 
 ## Task 6.2 -- Communicate Linux
-* Compile and run a `native`
+* Compile and run a `native` instance
 * Start a UDP server on port 8888 (using `udps`)
 * Send a packet to RIOT from Linux using `netcat`
 
@@ -350,7 +343,8 @@ echo "hello" | nc -6u <RIOT-IPv6-addr>%tap0 8888
 * Both protocol implementation and users can register to be interested in type + certain context (e.g. port in UDP)
 
 ```C
-gnrc_netreg_t ipv6_handler = { NULL, GNRC_NETREG_DEMUX_CTX_ALL,
+gnrc_netreg_t ipv6_handler = { NULL,
+                               GNRC_NETREG_DEMUX_CTX_ALL,
                                ipv6_handler_pid};
 gnrc_netreg_register(GNRC_NETTYPE_IPV6, &ipv6_handler);
 

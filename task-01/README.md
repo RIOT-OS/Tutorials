@@ -65,3 +65,5 @@
     connection to the RIOT shell.
 
 3.  Verify the output of `RIOT_BOARD` matches your hardware.
+
+[next task](../task-02)

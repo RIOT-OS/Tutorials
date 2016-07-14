@@ -1,6 +1,6 @@
 # Task 2: Custom shell handlers
 ## Task 2.1: A simple echo command handler
-Extend the `echo()` function to print the first argument to the command handler
+Extend the `echo()` function in [`main.c`](main.c#L12) to print the first argument to the command handler
 ```c
 int cmd_handler(int argc, char **argv);
 ```
@@ -26,10 +26,11 @@ static const shell_command_t shell_commands[] = {
 ```
 
 ## Task 2.2: Control the hardware
-1.  Include the `board.h` file and use `LED0_TOGGLE` in your custom shell command to toggle
-    the onboard LED.
-2.  Write a command handler `toggle` in `main.c` that toggles the primary LED
-    on the board.
-
+1.  Include the [`led.h`](http://doc.riot-os.org/led_8h.html) file to get access
+    to the `LED0_TOGGLE` macro.
+2.  Write a command handler `toggle` in [`main.c`](main.c) that toggles the
+    primary LED on the board using the `LED0_TOGGLE` macro.
 
 [Read the Doc](http://doc.riot-os.org/group__sys__shell.html)
+
+[next task](../task-03)
