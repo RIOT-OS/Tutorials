@@ -1,40 +1,44 @@
-# 1. Running RIOT
+# Task 1: Starting the RIOT
 
-## 1.1. Starting the RIOT on Native
-```sh
-make all term
-```
+## Task 1.1: Run your first application as Linux process
 
-## 1.2. Help ?
-Run `help` to see a list of all available commands
-```
-> help
-help
-Command              Description
----------------------------------------
-reboot               Reboot the node
-ps                   Prints information about running threads.
-```
+1.  Compile and run on `native` platform:
+    ```sh
+    make all term
+    ```
 
-Look at the output of `ps`
-```
-> ps
-ps
-        pid | name                 | state    Q | pri | stack ( used) | base       | current
-          - | isr_stack            | -        - |   - |  8192 (   -1) |  0x8055520 |  0x8055520
-          1 | idle                 | pending  Q |  15 |  8192 ( 6240) |  0x8053240 |  0x80539dd
-          2 | main                 | running  Q |   7 | 12288 ( 9312) |  0x8050240 |  0x8050ddd
-            | SUM                  |            |     | 28672 (15552)
->
-```
+2.  Run `help` to see a list of all available commands
+    ```
+    > help
+    help
+    Command              Description
+    ---------------------------------------
+    reboot               Reboot the node
+    ps                   Prints information about running threads.
+    ```
 
-## 1.3. Print the BOARD name
-Add a print statement to the `main` function to output the name of the board.
-```
-printf("This application runs on %s\n", RIOT_BOARD);
-```
+3.  Look at the output of `ps`
+    ```
+    > ps
+    ps
+            pid | name                 | state    Q | pri | stack ( used) | base       | current
+              - | isr_stack            | -        - |   - |  8192 (   -1) |  0x8055520 |  0x8055520
+              1 | idle                 | pending  Q |  15 |  8192 ( 6240) |  0x8053240 |  0x80539dd
+              2 | main                 | running  Q |   7 | 12288 ( 9312) |  0x8050240 |  0x8050ddd
+                | SUM                  |            |     | 28672 (15552)
+    ```
 
-## 1.4. Starting the RIOT on real hardware
+4.  Add a print statement to the `main()` function to output the name of the board.
+    ```
+    printf("This application runs on %s\n", RIOT_BOARD);
+    ```
+
+    Recompile and run again:
+    ```sh
+    make all term
+    ```
+
+## Task 1.2: Run your first application on real hardware
 1.  Get to know your hardware
 
     ![SAMR21-XPRO](../SAM-R21.jpg)
