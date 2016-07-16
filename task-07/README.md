@@ -8,7 +8,7 @@ you should be able to handle it.
 
 It uses the [example applications in the RIOT repository](https://github.com/RIOT-OS/RIOT/tree/master/examples).
 
-## Task 7.1: Compile the `gnrc_minimial` application
+## Task 7.1: Compile the `gnrc_minimal` application
 * Go to the [`gnrc_minimal` application](https://github.com/RIOT-OS/RIOT/tree/master/examples/gnrc_minimal)
 * Compile and run on `native`
 * Should print something like `My address is fe80::d403:24ff:fe89:2460`
