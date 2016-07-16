@@ -5,7 +5,7 @@ author: Martine Lenders
 
 # Starting the RIOT
 ## Preparations
-\footnotesize
+\tiny
 
 For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-OS/Tutorials)
 
@@ -15,6 +15,7 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) & [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads)
 * Install [Vagrant](https://www.vagrantup.com/downloads.html)
 * `git clone --recursive https://github.com/RIOT-OS/Tutorials`
+* Go to RIOT root directory: `cd Tutorials/RIOT`
 * Run the [Vagrant RIOT Setup](https://github.com/RIOT-OS/RIOT/blob/master/dist/tools/vagrant/README.md)
 * Make sure you've run `vagrant ssh` and clone the Tutorials folder again, now in your virtual machine: `git clone --recursive https://github.com/RIOT-OS/Tutorials`
 
@@ -30,6 +31,7 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 * Install `netcat` with IPv6 support (if necessary)\
   `sudo apt-get install netcat-openbsd`
 * `git clone --recursive https://github.com/RIOT-OS/Tutorials`
+* Go to the Tutorials directory: `cd Tutorials`
 
 ## Running RIOT
 * Applications in RIOT consist at minimum of
