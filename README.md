@@ -7,7 +7,7 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 **Quick Setup** (Using a Virtual Machine)
 
 * Install and set up [git](https://help.github.com/articles/set-up-git/)
-* Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) & [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads)
+* Install [VirtualBox 5.0](https://www.virtualbox.org/wiki/Download_Old_Builds_5_0) & [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads)
 * Install [Vagrant](https://www.vagrantup.com/downloads.html)
 * `git clone --recursive https://github.com/RIOT-OS/Tutorials`
 * Run the [Vagrant RIOT Setup](https://github.com/RIOT-OS/RIOT/blob/master/dist/tools/vagrant/README.md)
