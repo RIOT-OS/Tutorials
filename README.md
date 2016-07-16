@@ -12,6 +12,7 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 * `git clone --recursive https://github.com/RIOT-OS/Tutorials`
 * Move to teh RIOT directory: `cd Tutorials/RIOT/`
 * Run the [Vagrant RIOT Setup](https://github.com/RIOT-OS/RIOT/blob/master/dist/tools/vagrant/README.md)
+* Go back Tutorial directory: `cd ..`
 
 **Recommended Setup** (Without Using a VM)
 
@@ -23,6 +24,7 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 * On OS X: install [Tuntap for OS X](http://tuntaposx.sourceforge.net/)
 * [additional tweaks](https://github.com/RIOT-OS/RIOT/wiki/Board:-Samr21-xpro) necessary to work with the targeted hardware (ATSAMR21)
 * Install `netcat` with IPv6 support (if necessary)
+* Go to the Tutorials directory: `cd Tutorials`
 
   ```bash
   sudo apt-get install netcat-openbsd
