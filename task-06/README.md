@@ -80,6 +80,8 @@ USEMODULE += gnrc_conn_udp
     ```sh
     echo "hello" | nc -6u <RIOT-IPv6-addr>%tapbr0 8888
     ```
+    Note: on MAC use `bridge0` instead of `tapbr0`.
+
 4.  Start a UDP server on the host machine with `netcat`.
     ```
     nc -6lu 8888

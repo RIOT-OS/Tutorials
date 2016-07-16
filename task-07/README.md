@@ -15,8 +15,9 @@ It uses the [example applications in the RIOT repository](https://github.com/RIO
 * Ping RIOT instance from Linux:
 
 ```sh
-ping6 <RIOT-IPv6-addr>%tap0
+ping6 <RIOT-IPv6-addr>%tapbr0
 ```
+Note: on MAC use `bridge0` instead of `tapbr0`.
 
 ## Task 7.2: Extend `gnrc_minimal` application
 * Add the `gnrc_udp` module to the application's [Makefile](Makefile)
