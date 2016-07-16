@@ -41,6 +41,14 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 * [Task 6: Sending and receiving UDP packets](task-06/)
 * [Task 7: The GNRC network stack](task-07/)
 
+## Troubleshooting
+
+If you get the following error after running `vagrant up` 
+
+> The guest machine entered an invalid state while waiting for it to boot. Valid states are 'starting, running'. The machine is in the 'poweroff' state.
+
+Make sure you have the [Extension Pack](https://www.virtualbox.org/wiki/Downloads) installed.
+
 ## License
 This work and all its related code and documents are licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
