@@ -78,7 +78,7 @@ USEMODULE += gnrc_conn_udp
 2.  Start a UDP server on port 8888 with `udps 8888`.
 3.  Send a packet to RIOT from Linux using `netcat`
     ```sh
-    echo "hello" | nc -6u <RIOT-IPv6-addr>%tap0 8888
+    echo "hello" | nc -6u <RIOT-IPv6-addr>%tapbr0 8888
     ```
 4.  Start a UDP server on the host machine with `netcat`.
     ```
