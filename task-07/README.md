@@ -25,7 +25,7 @@ ping6 <RIOT-IPv6-addr>%tap0
 
 ```C
 gnrc_netreg_entry_t server = {NULL, 8888, sched_active_pid};
-gnrc_netreg_register(GNRC_NETTYPE_UDP, &app);
+gnrc_netreg_register(GNRC_NETTYPE_UDP, &server);
 ```
 
 * Packets can be received using the IPC receive function [msg_receive()](http://doc.riot-os.org/group__core__msg.html#gae3e05f08bd71d6f65dc727624c4d5f7a):
