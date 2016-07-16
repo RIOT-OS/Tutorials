@@ -117,7 +117,7 @@ int cmd_handler(int argc, char **argv);
 * `argv`: array of strings of arguments to the command
 
 ```
-print hello world    # argv == {"hello", "world"}
+print hello world    # argv == {"print", "hello", "world"}
 ```
 
 * `argc`: length of `argv`
@@ -346,12 +346,12 @@ echo "hello" | nc -6u <RIOT-IPv6-addr>%tap0 8888
 * Both protocol implementation and users can register to be interested in type + certain context (e.g. port in UDP)
 
 ```C
-gnrc_netreg_t ipv6_handler = { NULL,
+gnrc_netreg_entry_t ipv6_handler = { NULL,
                                GNRC_NETREG_DEMUX_CTX_ALL,
                                ipv6_handler_pid};
 gnrc_netreg_register(GNRC_NETTYPE_IPV6, &ipv6_handler);
 
-gnrc_netreg_t dns_handler = { NULL, PORT_DNS,
+gnrc_netreg_entry_t dns_handler = { NULL, PORT_DNS,
                               dns_handler_pid};
 gnrc_netreg_register(GNRC_NETTYPE_UDP, &dns_handler);
 ```

@@ -24,7 +24,7 @@ ping6 <RIOT-IPv6-addr>%tap0
   case) using `gnrc_netreg_register()` from [`gnrc/net/netreg.h`](http://doc.riot-os.org/group__net__gnrc__netreg.html):
 
 ```C
-gnrc_netreg_t server = {NULL, 8888, sched_active_pid};
+gnrc_netreg_entry_t server = {NULL, 8888, sched_active_pid};
 gnrc_netreg_register(GNRC_NETTYPE_UDP, &app);
 ```
 
