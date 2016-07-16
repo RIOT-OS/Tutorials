@@ -10,6 +10,7 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 * Install [VirtualBox 5.0](https://www.virtualbox.org/wiki/Download_Old_Builds_5_0) & [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads)
 * Install [Vagrant](https://www.vagrantup.com/downloads.html)
 * `git clone --recursive https://github.com/RIOT-OS/Tutorials`
+* Move to teh RIOT directory: `cd Tutorials/RIOT/`
 * Run the [Vagrant RIOT Setup](https://github.com/RIOT-OS/RIOT/blob/master/dist/tools/vagrant/README.md)
 
 **Recommended Setup** (Without Using a VM)
