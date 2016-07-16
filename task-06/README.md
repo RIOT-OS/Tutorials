@@ -90,4 +90,8 @@ USEMODULE += gnrc_conn_udp
     ```
 [Read the Doc](http://doc.riot-os.org/group__net__conn.html)
 
+## Task 6.3 -- Exchange UDP packets with your neighbors
+* Compile, flash and run on the board `BOARD=samr21-xpro make all flash term`
+* Send and receive UDP messages to and from your neighbors using `udp` and `udps`
+
 [next task](../task-07)
