@@ -33,7 +33,7 @@ void *_udp_server(void *args)
         int res;
         ipv6_addr_t src;
         size_t src_len = sizeof(ipv6_addr_t);
-        if ((res = conn_udp_recvfrom(&conn, server_buffer, sizeof(server_buffer),
+        if ((res = conn_udp_recvfrom(&conn, server_buffer, sizeof(server_buffer) - 1,
                                      &src, &src_len, &port)) < 0) {
             puts("Error while receiving");
         }
