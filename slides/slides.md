@@ -16,6 +16,7 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 * Install [Vagrant](https://www.vagrantup.com/downloads.html)
 * `git clone --recursive https://github.com/RIOT-OS/Tutorials`
 * Run the [Vagrant RIOT Setup](https://github.com/RIOT-OS/RIOT/blob/master/dist/tools/vagrant/README.md)
+* Make sure you've run `vagrant ssh` and clone the Tutorials folder again, now in your virtual machine: `git clone --recursive https://github.com/RIOT-OS/Tutorials`
 
 **Recommended Setup** (Without Using a VM)
 
