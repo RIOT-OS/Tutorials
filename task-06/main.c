@@ -19,7 +19,7 @@ static const shell_command_t shell_commands[] = {
 int main(void)
 {
     msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
-    puts("This is Task-04");
+    puts("This is Task-06");
 
     char line_buf[SHELL_DEFAULT_BUFSIZE];
     shell_run(shell_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
