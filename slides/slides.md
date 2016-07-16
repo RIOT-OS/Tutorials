@@ -5,7 +5,7 @@ author: Martine Lenders
 
 # Starting the RIOT
 ## Preparations
-\footnotesize
+\tiny
 
 For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-OS/Tutorials)
 
@@ -15,7 +15,9 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) & [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads)
 * Install [Vagrant](https://www.vagrantup.com/downloads.html)
 * `git clone --recursive https://github.com/RIOT-OS/Tutorials`
+* go to RIOT root directory: `cd Tutorials/RIOT`
 * Run the [Vagrant RIOT Setup](https://github.com/RIOT-OS/RIOT/blob/master/dist/tools/vagrant/README.md)
+* go back Tutorial directory `cd ..`
 
 **Recommended Setup** (Without Using a VM)
 
