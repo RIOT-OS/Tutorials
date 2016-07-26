@@ -22,7 +22,7 @@ Note: on MAC use `bridge0` instead of `tapbr0`.
 ## Task 7.2: Extend `gnrc_minimal` application
 * Add the `gnrc_udp` module to the application's [Makefile](Makefile)
 * You can register for packets of a certain type and context (port 8888 in our
-  case) using `gnrc_netreg_register()` from [`gnrc/net/netreg.h`](http://doc.riot-os.org/group__net__gnrc__netreg.html):
+  case) using `gnrc_netreg_register()` from [`net/gnrc/netreg.h`](http://doc.riot-os.org/group__net__gnrc__netreg.html):
 
 ```C
 gnrc_netreg_entry_t server = {NULL, 8888, sched_active_pid};
