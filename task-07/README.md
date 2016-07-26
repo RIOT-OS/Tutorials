@@ -36,6 +36,19 @@ msg_t msg;
 msg_receive(&msg);
 ```
 
+Remember to remove the packet after reception (otherwise the packet buffer
+will overflow)!
+
+```C
+#include "net/gnrc/pktbuf.h"
+
+/* ... */
+
+gnrc_pktsnip_t *pkt = (gnrc_pktsnip_t *)msg.content.ptr;
+gnrc_pktbuf_release(pkt);
+```
+
+
 1.  Extend `gnrc_minimal` as such that it counts received UDP packets on port 8888.
 2.  Use `netcat` on your host to test your application on native node.
 
