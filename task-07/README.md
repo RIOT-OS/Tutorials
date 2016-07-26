@@ -23,6 +23,8 @@ Note: on MAC use `bridge0` instead of `tapbr0`.
 * Add the `gnrc_udp` module to the application's [Makefile](Makefile)
 * You can register for packets of a certain type and context (port 8888 in our
   case) using `gnrc_netreg_register()` from [`net/gnrc/netreg.h`](http://doc.riot-os.org/group__net__gnrc__netreg.html):
+* The current thread can be obtained with the `sched_active_pid` variable from
+  `sched.h`
 
 ```C
 gnrc_netreg_entry_t server = {NULL, 8888, sched_active_pid};

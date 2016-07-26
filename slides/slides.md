@@ -433,18 +433,23 @@ ping6 <RIOT-IPv6-addr>%tap0
 ![](pictures/gnrc_minimal_app.svg)
 
 ## Task 7.2 -- Extend `gnrc_minimal` application
+\scriptsize
+
 * Add the `gnrc_udp` module to the application
 * Register for UDP packets of port 8888
 
 ```C
-/* include "sched.h" and "net/gnrc/netreg.h"! */
+/* include "sched.h", "net/gnrc/netreg.h", and "net/gnrc/pktbuf.h"! */
 unsigned int count = 0; msg_t msg;
 gnrc_netreg_t server = {NULL, 8888, sched_active_pid};
 gnrc_netreg_register(GNRC_NETTYPE_UDP, &app);
 
 while (1) {
+    gnrc_pktsnip_t *pkt;
     msg_receive(&msg);
+    pkt = (gnrc_pktsnip_t *)msg.content.ptr;
     printf("Received %u UDP packets\n", ++count);
+    gnrc_pktbuf_release(pkt);
 }
 ```
 
