@@ -16,7 +16,7 @@ ifneq (,$(wildcard template.tex))
 endif
 
 ifeq (,$(shell type pandoc 2> /dev/null))
-	$(error Need `pandoc` (including python-lib pandocfilters) to compile)
+  $(error Need `pandoc` (including python-lib pandocfilters) to compile)
 endif
 
 .PHONY: all clean
