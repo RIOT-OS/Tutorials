@@ -9,10 +9,18 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 * Install and set up [git](https://help.github.com/articles/set-up-git/)
 * Install [VirtualBox 5.0](https://www.virtualbox.org/wiki/Download_Old_Builds_5_0) & [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads)
 * Install [Vagrant](https://www.vagrantup.com/downloads.html)
-* `git clone --recursive https://github.com/RIOT-OS/Tutorials`
-* Move to the RIOT directory: `cd Tutorials/    RIOT/`
-* Run the [Vagrant RIOT Setup](https://github.com/RIOT-OS/RIOT/blob/master/dist/tools/vagrant/README.md)
-* Make sure you've run `vagrant ssh` and clone the Tutorials folder again, now in your virtual machine: `git clone --recursive https://github.com/RIOT-OS/Tutorials`
+* Linux, OSX:
+    * `git clone --recursive https://github.com/RIOT-OS/Tutorials`
+* Windows:
+    * set `git config --global core.autocrlf input` before cloning
+    * clone the `Tutorials` and the `RIOT` submodule as follows:
+    ```Shell
+    git clone https://github.com/RIOT-OS/Tutorials
+    cd Tutorials
+    git submodule update --init --recursive
+    ```
+* Change to the `RIOT` directory: `cd Tutorials/RIOT/`
+* Run `vagrant up tutorials` and `vagrant ssh tutorials` afterwards. See the [Vagrant RIOT Setup](https://github.com/RIOT-OS/RIOT/blob/master/dist/tools/vagrant/README.md) for a more general explanation.
 
 **Recommended Setup** (Without Using a VM)
 
