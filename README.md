@@ -7,7 +7,7 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 **Quick Setup** (Using a Virtual Machine)
 
 * Install and set up [git](https://help.github.com/articles/set-up-git/)
-* Install [VirtualBox 5.0](https://www.virtualbox.org/wiki/Download_Old_Builds_5_0) & [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads)
+* Install latest [VirtualBox](https://www.virtualbox.org/wiki/Downloads) & [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads) for **your system**
 * Install [Vagrant](https://www.vagrantup.com/downloads.html)
 * Linux, OSX:
     * `git clone --recursive https://github.com/RIOT-OS/Tutorials`
@@ -20,6 +20,7 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
     git submodule update --init --recursive
     ```
 * Change to the `RIOT` directory: `cd Tutorials/RIOT/`
+* In case a virtual machine is disseminated locally, adapt the path for the vagrant box `vagrant box add RIOT-VM <path to box>`
 * Run `vagrant up` and `vagrant ssh` afterwards. See the [Vagrant RIOT Setup](https://github.com/RIOT-OS/RIOT/blob/master/dist/tools/vagrant/README.md) for a more general explanation.
 
 **Recommended Setup** (Without Using a VM)
@@ -51,11 +52,19 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 
 ## Troubleshooting
 
-If you get the following error after running `vagrant up` 
+### If you get the following error after running `vagrant up`
 
 > The guest machine entered an invalid state while waiting for it to boot. Valid states are 'starting, running'. The machine is in the 'poweroff' state.
 
 Make sure you have the [Extension Pack](https://www.virtualbox.org/wiki/Downloads) installed.
+
+### If you cannot flash a connected board (`/dev/ttyXXXX` does not exist)
+
+Make sure your user is a member of the usergroup `vboxusers`. On Linux you can add the current user with
+
+`usermod -a -G vboxusers $USER`.
+
+Note that you need to log out once to reload a Linux user's group assignments
 
 ## License
 This work and all its related code and documents are licensed under a
