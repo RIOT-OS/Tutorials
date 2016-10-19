@@ -49,3 +49,4 @@ RIOT provides three shell to interact with the CCN-Lite stack:
 (see [http://doc.riot-os.org/group__pkg__ccnlite.html](http://doc.riot-os.org/group__pkg__ccnlite.html)
 * Use `ccnl_set_local_producer()` to create content on the fly
 
+[next task](../task-09)
