@@ -20,7 +20,7 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
     git submodule update --init --recursive
     ```
 * Change to the `RIOT` directory: `cd Tutorials/RIOT/`
-* In case a virtual machine is disseminated locally, adapt the path for the vagrant box `vagrant box add RIOT-VM <path to box>`
+* In case a virtual machine is disseminated locally, adapt the path for the vagrant box `vagrant box add RIOT/ubuntu1604 <path to box>`
 * Run `vagrant up` and `vagrant ssh` afterwards. See the [Vagrant RIOT Setup](https://github.com/RIOT-OS/RIOT/blob/master/dist/tools/vagrant/README.md) for a more general explanation.
 
 **Recommended Setup** (Without Using a VM)
