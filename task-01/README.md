@@ -58,10 +58,18 @@
 
 2.  To compile an application for a specific board, we can make use of the `BOARD` environment
     variable.
+
+    In case you are running on an Atmel board, type:
     ```sh
     BOARD=samr21-xpro make all flash term
     ```
-    This command will compile the application, burn the image onto the `samr21-xpro` and open a
+
+    For the (yellow) phyNODE use;
+    ```sh
+    BOARD=pba-d-01-kw2x make all flash term
+    ```
+
+    This command will compile the application, burn the image onto the board and open a
     connection to the RIOT shell.
 
 3.  Verify the output of `RIOT_BOARD` matches your hardware.
