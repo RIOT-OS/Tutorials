@@ -64,3 +64,5 @@ gnrc_pktbuf_release(pkt);
 * Send your neighbor some messages using `udp send`
 
 [Read the Doc](http://doc.riot-os.org/group__net__gnrc.html)
+
+[next task](../task-08)

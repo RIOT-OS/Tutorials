@@ -49,6 +49,8 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 * [Task 5: Using network devices](task-05/)
 * [Task 6: Sending and receiving UDP packets](task-06/)
 * [Task 7: The GNRC network stack](task-07/)
+* [Task 8: CCN-Lite on RIOT](task-08/)
+* [Task 9: RIOT and RPL](task-09/)
 
 ## Troubleshooting
 
