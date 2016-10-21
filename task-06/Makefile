@@ -1,5 +1,5 @@
 # name of your application
-APPLICATION = Task04
+APPLICATION = Task06
 
 # If no BOARD is found in the environment, use this default:
 BOARD ?= native

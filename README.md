@@ -4,7 +4,7 @@
 
 For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-OS/Tutorials)
 
-**Quick Setup** (Using a Virtual Machine)
+**Quick Setup using a Virtual Machine (recommended for this Tutorial)**
 
 * Install and set up [git](https://help.github.com/articles/set-up-git/)
 * Install latest [VirtualBox](https://www.virtualbox.org/wiki/Downloads) & [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads) for **your system**
@@ -19,11 +19,10 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
     cd Tutorials
     git submodule update --init --recursive
     ```
-* Change to the `RIOT` directory: `cd Tutorials/RIOT/`
 * In case a virtual machine is disseminated locally, adapt the path for the vagrant box `vagrant box add RIOT/ubuntu1604 <path to box>`
 * Run `vagrant up` and `vagrant ssh` afterwards. See the [Vagrant RIOT Setup](https://github.com/RIOT-OS/RIOT/blob/master/dist/tools/vagrant/README.md) for a more general explanation.
 
-**Recommended Setup** (Without Using a VM)
+**Regular Setup without using a VM (recommended for RIOT developement)**
 
 * Install and set up [git](https://help.github.com/articles/set-up-git/)
 * Install the build-essential packet (make, gcc etc.). This varies based on the operating system in use.

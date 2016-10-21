@@ -6,6 +6,8 @@ from [CCN-Lite](http://www.ccn-lite.net/) on RIOT. In the current state you can
 use only one packet format, `ndn2013`, and only relay over the link-layer
 (Ethernet, IEEE~802.15.4 or what else is supported by your network device).
 
+*Please note that compiling this application will clone the CCN-Lite remote repository.*
+
 ## The shell commands
 
 RIOT provides three shell to interact with the CCN-Lite stack:
@@ -42,7 +44,7 @@ RIOT provides three shell to interact with the CCN-Lite stack:
 * Create some content for /dagstuhl/m2m/<youraccountname>
 * Send an interest for /dagstuhl/m2m/<otheraccountname>
 
-## Task 8.2: Modify the default shell commands
+## Task 8.2: Modify the default shell commands (advanced task)
 
 * Take a look at the default shell commands in `sys/shell/commands/sc_ccnl.c`
 * Create a new command to send an interest with a shorter timeout

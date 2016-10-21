@@ -30,9 +30,9 @@ USEMODULE += auto_init_gnrc_netif
 * Check with `ifconfig` or `ip link`!
 
 ## Task 5.1 -- Your first networking application
-* Run the application on `native`: `PORT=tap0 make all term`
+* Run the application on `native`: `make all term PORT=tap0`
 * Type `help`
-* Run a second instance with `PORT=tap1 make all term`
+* Run a second instance with `make all term PORT=tap1`
 * Type `ifconfig` on both to get hardware address and interface number
 * Use `txtsnd` command to exchange messages between the two instances
 
