@@ -1,7 +1,10 @@
-APPLICATION = ccn-lite-relay
+APPLICATION = Task08
 
 # If no BOARD is found in the environment, use this default:
 BOARD ?= native
+
+# This has to be the absolute path to the RIOT base directory:
+RIOTBASE ?= $(CURDIR)/../RIOT
 
 BOARD_WHITELIST := fox iotlab-m3 msba2 mulle native pba-d-01-kw2x samr21-xpro
 
