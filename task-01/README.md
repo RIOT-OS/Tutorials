@@ -41,20 +41,39 @@
 ## Task 1.2: Run your first application on real hardware
 1.  Get to know your hardware
 
+    *Atmel SAM R21 Xplained Pro*
+
     ![SAMR21-XPRO](../SAM-R21.jpg)
 
     MCU                    | ATSAMR21G18A
     -----------------------|------------------------------------
     Family                 | ARM Cortex-M0+
     Vendor                 | Atmel
-    RAM                    | 32Kb
-    Flash                  | 256Kb
+    RAM/ROM                | 32Kb / 256Kb
     Frequency              | up to 48MHz
-    FPU                    | no
     Timers                 | 6 (1x 16-bit, 2x 24-bit, 3x 32-bit)
     ADCs                   | 1x 12-bit (8 channels)
     UARTs / SPIs / I2Cs    | max 5 (shared)
     Vcc                    | 1.8V - 3.6V
+    Radio                  | IEEE802.15.4 @ 2,4GHz
+    Sensors                | none
+
+    *Phytec phyNODE KW22*
+
+    ![phyNODE](../phytec.png)
+
+    MCU                    | MKW22D512
+    -----------------------|------------------------------------
+    Family                 | ARM Cortex-M4
+    Vendor                 | Kinetis
+    RAM/ROM                | 65Kb / 512Kb
+    Frequency              | up to 50MHz
+    Timers                 | up to 12 (16-bit, 24-bit, 32-bit)
+    ADCs                   | 1x 16-bit (8 channels)
+    UARTs / SPIs / I2Cs    | 3 / 1 / 2
+    Vcc                    | 1.8V - 3.6V
+    Radio                  | IEEE802.15.4 @ 2,4GHZ
+    Sensors                | diverse
 
 2.  To compile an application for a specific board, we can make use of the `BOARD` environment
     variable.
