@@ -32,13 +32,13 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 * On OS X: install [Tuntap for OS X](http://tuntaposx.sourceforge.net/)
 * [additional tweaks](https://github.com/RIOT-OS/RIOT/wiki/Board:-Samr21-xpro) necessary to work with the targeted hardware (ATSAMR21)
 * Install `netcat` with IPv6 support (if necessary)
-* Go to the Tutorials directory: `cd Tutorials`
 
   ```bash
   sudo apt-get install netcat-openbsd
   ```
 
 * `git clone --recursive https://github.com/RIOT-OS/Tutorials`
+* Go to the Tutorials directory: `cd Tutorials`
 
 ## Tasks
 * [Task 1: Starting the RIOT](task-01/)
