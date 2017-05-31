@@ -22,7 +22,7 @@ Note: on MAC use `bridge0` instead of `tapbr0`.
 ## Task 7.2: Extend `gnrc_minimal` application
 * Add the `gnrc_udp` module to the application's [Makefile](Makefile)
 * You can register for packets of a certain type and context (port 8888 in our
-  case) using `gnrc_netreg_register()` from [`net/gnrc/netreg.h`](http://doc.riot-os.org/group__net__gnrc__netreg.html):
+  case) using `gnrc_netreg_register()` from [`net/gnrc/netreg.h`](https://doc.riot-os.org/group__net__gnrc__netreg.html):
 * The current thread can be obtained with the `sched_active_pid` variable from
   `sched.h`
 
@@ -31,7 +31,7 @@ gnrc_netreg_entry_t server = {NULL, 8888, sched_active_pid};
 gnrc_netreg_register(GNRC_NETTYPE_UDP, &server);
 ```
 
-* Packets can be received using the IPC receive function [msg_receive()](http://doc.riot-os.org/group__core__msg.html#gae3e05f08bd71d6f65dc727624c4d5f7a):
+* Packets can be received using the IPC receive function [msg_receive()](https://doc.riot-os.org/group__core__msg.html#gae3e05f08bd71d6f65dc727624c4d5f7a):
 
 ```C
 msg_t msg;
@@ -63,6 +63,6 @@ gnrc_pktbuf_release(pkt);
 * Get your IPv6 address using `ifconfig`
 * Send your neighbor some messages using `udp send`
 
-[Read the Doc](http://doc.riot-os.org/group__net__gnrc.html)
+[Read the Doc](https://doc.riot-os.org/group__net__gnrc.html)
 
 [next task](../task-08)

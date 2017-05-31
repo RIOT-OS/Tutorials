@@ -30,11 +30,11 @@ static const shell_command_t shell_commands[] = {
 Please note, that the list of shell commands must be terminated with an empty entry.
 
 ## Task 2.2: Control the hardware
-1.  Include the [`led.h`](http://doc.riot-os.org/led_8h.html) file to get access
+1.  Include the [`led.h`](https://doc.riot-os.org/led_8h.html) file to get access
     to the `LED0_TOGGLE` macro.
 2.  Write a command handler `toggle` in [`main.c`](main.c) that toggles the
     primary LED on the board using the `LED0_TOGGLE` macro.
 
-[Read the Doc](http://doc.riot-os.org/group__sys__shell.html)
+[Read the Doc](https://doc.riot-os.org/group__sys__shell.html)
 
 [next task](../task-03)

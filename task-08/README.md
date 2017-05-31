@@ -48,7 +48,7 @@ RIOT provides three shell to interact with the CCN-Lite stack:
 
 * Take a look at the default shell commands in `sys/shell/commands/sc_ccnl.c`
 * Create a new command to send an interest with a shorter timeout
-(see [http://doc.riot-os.org/group__pkg__ccnlite.html](http://doc.riot-os.org/group__pkg__ccnlite.html)
+(see [https://doc.riot-os.org/group__pkg__ccnlite.html](https://doc.riot-os.org/group__pkg__ccnlite.html)
 * Use `ccnl_set_local_producer()` to create content on the fly
 
 [next task](../task-09)
