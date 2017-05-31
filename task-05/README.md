@@ -3,7 +3,7 @@
 # Task 5: Using network devices
 
 ## RIOT's Networking architecture
-Network devices are accessed through [`netdev`](http://doc.riot-os.org/group__drivers__netdev__netdev2.html) driver API
+Network devices are accessed through [`netdev`](http://doc.riot-os.org/group__drivers__netdev__api.html) driver API
 
 ![Networking overview](../overview-net.png)
 
@@ -41,6 +41,6 @@ USEMODULE += auto_init_gnrc_netif
 * Type `ifconfig` to get your hardware addresses
 * Use `txtsnd` to send one of your neighbors a friendly message
 
-[Read the Doc](http://doc.riot-os.org/group__drivers__netdev__netdev2.html)
+[Read the Doc](http://doc.riot-os.org/group__drivers__netdev__api.html)
 
 [next task](../task-06)
