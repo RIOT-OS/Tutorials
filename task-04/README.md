@@ -1,7 +1,7 @@
 [previous task](../task-03)
 
 # Task 4: Timers
-[`xtimer`](http://doc.riot-os.org/group__sys__xtimer.html) is the high level API of RIOT to multiplex hardware timers.
+[`xtimer`](https://doc.riot-os.org/group__sys__xtimer.html) is the high level API of RIOT to multiplex hardware timers.
 For this task we need only the following functions
 
     - `xtimer_now()` to get current system time in microseconds
@@ -16,6 +16,6 @@ USEMODULE += xtimer
 * Create a thread in [`main.c`](main.c#L12) that prints the current system time every 2 seconds
 * Check the existence of the thread with `ps` shell command
 
-[Read the doc](http://doc.riot-os.org/group__sys__xtimer.html)
+[Read the doc](https://doc.riot-os.org/group__sys__xtimer.html)
 
 [next task](../task-05)
