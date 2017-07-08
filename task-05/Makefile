@@ -20,6 +20,7 @@ USEMODULE += shell
 USEMODULE += shell_commands
 USEMODULE += ps
 USEMODULE += gnrc_pktdump
+USEMODULE += gnrc_txtsnd
 USEMODULE += gnrc_netdev_default
 USEMODULE += auto_init_gnrc_netif
 
