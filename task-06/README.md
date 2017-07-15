@@ -29,7 +29,6 @@ USEMODULE += gnrc_conn_udp
    random_init          initializes the PRNG
    random_get           returns 32 bit of pseudo randomness
    ifconfig             Configure network interfaces
-   txtsnd               Sends a custom string as is over the link layer
    ncache               manage neighbor cache by hand
    routers              IPv6 default router list
    >
