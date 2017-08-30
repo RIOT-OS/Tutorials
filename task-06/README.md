@@ -8,6 +8,8 @@ The transport layer (UDP, TCP, etc) is accessed through [`sock`](https://doc.rio
 
 Look at the new modules in the [`Makefile`](Makefile)
 ```
+USEMODULE += gnrc_ipv6_default
+USEMODULE += gnrc_icmpv6_echo
 USEMODULE += gnrc_sock_udp
 ```
 
