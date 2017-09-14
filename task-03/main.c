@@ -8,6 +8,7 @@ char stack[THREAD_STACKSIZE_MAIN];
 
 void *thread_handler(void *arg)
 {
+    (void) arg;
     puts("I'm in \"thread\" now");
     return NULL;
 }
