@@ -12,8 +12,8 @@ int main(void)
     puts("This is Task-05");
 
     /* initialize and register pktdump to print received packets */
-    gnrc_netreg_entry_t dump = { NULL, GNRC_NETREG_DEMUX_CTX_ALL,
-                                 gnrc_pktdump_pid };
+    gnrc_netreg_entry_t dump = GNRC_NETREG_ENTRY_INIT_PID(GNRC_NETREG_DEMUX_CTX_ALL,
+                                 gnrc_pktdump_pid);
     gnrc_netreg_register(GNRC_NETTYPE_UNDEF, &dump);
 
     char line_buf[SHELL_DEFAULT_BUFSIZE];
