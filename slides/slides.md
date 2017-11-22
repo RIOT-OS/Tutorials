@@ -100,11 +100,40 @@ int main(void)
     - Recompile and restart `make all term`
     - Look at the result
 
-## Task 1.2: Run your first application on real hardware
-1. Compile, flash and run on `samr21-xpro` \
-    `BOARD=samr21-xpro make all flash term` \
-    (or other `BOARD` if available)
-2. Verify output of `RIOT_BOARD`
+## Setting up your IoT-LAB account initially
+* Go to [https://www.iot-lab.info/testbed/](https://www.iot-lab.info/testbed/) and login with the provided credentials
+* Open "Edit My Profile" in the upper right corner:
+![](pictures/iotlab_profile.png){ width=50% }
+* Copy/paste your ssh key (you have to generate one first:
+`ssh-keygen`)
+* Authenticate for CLI access with `auth-cli -u <user>` using the provided credentials
+
+## Preparing a RIOT experiment in the testbed
+* Compile for the board `BOARD=iotlab-m3 make all`
+* Create an experiment and connect to the nodes:
+```
+IOTLAB_DURATION=60 IOTLAB_NODES=2 \
+IOTLAB_SITE=lille BOARD=iotlab-m3 \
+make iotlab-exp
+```
+
+### Protip:
+* Set `iotlab-m3` as your default for the current session by using
+    ```
+    export BOARD=iotlab-m3
+    ```
+
+## Task 1.2: Run your first application on the testbed
+* Connect to the nodes in the testbed:
+    ```
+    BOARD=iotlab-m3 make iotlab-term
+    ```
+
+### Protips:
+* Find out which nodes you have (either via web inter or by typing any command)
+* Send commands to one node by using a corresponding prefix:
+`m3-16;ps`
+![](pictures/iotlab_exp.png){ width=70% }
 
 # Custom shell commands
 ## Writing a shell handler
@@ -306,7 +335,7 @@ echo "hello" | nc -6u <RIOT-IPv6-addr>%tap0 8888
   `udp <tap0-IPv6-addr> 8888 hello`
 
 ## Task 6.3 -- Exchange UDP packets with your neighbors
-* Compile, flash and run on the board `BOARD=samr21-xpro make all flash term`
+* Compile, flash and run on the board `BOARD=iotlab-m3 make all iotlab-flash iotlab-term`
 * Send and receive UDP messages to and from your neighbors using `udp` and `udps`
 
 # GNRC
@@ -388,7 +417,7 @@ ls
 
 ![](pictures/gnrc_minimal_eth.svg)
 
-## `gnrc_minimal` example (`samr21-xpro`)
+## `gnrc_minimal` example (`iotlab-m3`)
 * `*` name might be subject to change
 
 ![](pictures/gnrc_minimal_ieee802154.svg)
@@ -411,7 +440,7 @@ Pseudo-module dependencies
 
 ![](pictures/gnrc_minimal_eth_dep.svg)
 
-## `gnrc_minimal` example (`samr21-xpro`)
+## `gnrc_minimal` example (`iotlab-m3`)
 * `*` = name might be subject to change
 
 ![](pictures/gnrc_minimal_ieee802154_dep.svg)
@@ -426,7 +455,7 @@ Pseudo-module dependencies
 ping6 <RIOT-IPv6-addr>%tap0
 ```
 
-## `gnrc_minimal` example (`samr21-xpro`)
+## `gnrc_minimal` example (`iotlab-m3`)
 * Adding a simple application
 * `*` = name might be subject to change
 
@@ -459,13 +488,26 @@ while (1) {
 ```sh
 echo "hello" | nc -6u <RIOT-IPv6-addr>%tap0 8888
 ```
+## Task 8.1: Generate content and discover other content
+
+* You can use the shell commands above to create some content chunks and send
+  out interests for a specific name
+* Create some content for /dagstuhl/m2m/<youraccountname>
+* Send an interest for /dagstuhl/m2m/<otheraccountname>
+
+## Task 8.2: Modify the default shell commands
+
+* Take a look at the default shell commands in `sys/shell/commands/sc_ccnl.c`
+* Create a new command to send an interest with a shorter timeout
+(see [http://doc.riot-os.org/group__pkg__ccnlite.html](http://doc.riot-os.org/group__pkg__ccnlite.html)
+* Use `ccnl_set_local_producer()` to create content on the fly
 
 ## `gnrc_networking` example (`native`)
 * `*` = name might be subject to change
 
 ![](pictures/gnrc_networking_eth.svg)
 
-## `gnrc_networking` example (`samr21-xpro`)
+## `gnrc_networking` example (`iotlab-m3`)
 * `*` = name might be subject to change
 
 ![](pictures/gnrc_networking_ieee802154.svg)
@@ -484,7 +526,7 @@ Pseudo-module dependencies
 
 ![](pictures/gnrc_networking_eth_dep.svg)
 
-## `gnrc_networking` example (`samr21-xpro`)
+## `gnrc_networking` example (`iotlab-m3`)
 * `*` = name might be subject to change
 
 ![](pictures/gnrc_networking_ieee802154_dep.svg)
@@ -492,14 +534,14 @@ Pseudo-module dependencies
 ## Task 7.3 -- Send your neighbor some messages again
 * Go to `gnrc_networking` example: `cd ../gnrc_networking`
 * Have a look in `udp.c` how packets are constructed and send
-* Compile, flash, and run on the board `BOARD=samr21-xpro make all flash term`
+* Compile, flash, and run on the board `BOARD=iotlab-m3 make all flash term`
 * Type `help`
 * Start UDP server on port 8888 using `udp server 8888`
 * Get your IPv6 address using `ifconfig`
 * Send your neighbor some messages using `udp send`
 
 ## `gnrc_tftp` example
-* for simplicity only the `samr21-xpro` examples from now on
+* for simplicity only the `iotlab-m3` examples from now on
 * `*` = name might be subject to change
 
 ![](pictures/gnrc_tftp.svg)
