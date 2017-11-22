@@ -6,13 +6,13 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:svg="http://www.w3.org/2000/svg">
-  <title>lwip_networking on samr21-xpro</title>
+  <title>emb6_networking on samr21-xpro</title>
   <metadata>
     <rdf:RDF>
-      <cc:Work rdf:about="Example use-case for lwip_networking">
+      <cc:Work rdf:about="Example use-case for emb6_networking">
         <dc:format>image/svg+xml</dc:format>
         <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>lwip_networking on samr21-xpro</dc:title>
+        <dc:title>emb6_networking on samr21-xpro</dc:title>
         <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/" />
         <dc:creator>
           <cc:Agent>
@@ -84,14 +84,14 @@
           fill: #C5D2E4;
           stroke: none;
         }
-        #lwip-detail-conn {
+        #emb6-detail-sock {
           fill: none;
-          stroke: url(#outer-gradient-conn);
+          stroke: url(#outer-gradient-sock);
           stroke-linejoin: miter;
           stroke-miterlimit: 4;
           stroke-width: 3;
         }
-        #lwip-detail-netdev {
+        #emb6-detail-netdev {
           fill: none;
           stroke: url(#outer-gradient-netdev);
           stroke-linejoin: miter;
@@ -139,19 +139,19 @@
           fill: #dddddd;
         }
 
-        #lwip-conn-box,#microcoap-box {
+        #emb6-sock-box,#microcoap-box {
           fill: #ff99ff;
         }
-        #lwip-box {
+        #emb6-box {
           fill: #999999;
         }
-        #lwip-ipv6-box {
+        #emb6-ipv6-box {
           fill: #99ffbb;
         }
-        #lwip-ipv6 .submodbox {
+        #emb6-ipv6 .submodbox {
           fill: #ccffdd;
         }
-        #lwip-6lo-box {
+        #emb6-6lo-box {
           fill: #ffff99;
         }
         .mac-box {
@@ -193,7 +193,7 @@
           text-anchor: left;
         }
     </style>
-    <linearGradient id="outer-gradient-conn" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="outer-gradient-sock" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop style="stop-color: #000000; stop-opacity: 0;" offset="0" />
       <stop style="stop-color: #000000; stop-opacity: 0;" offset="0.1" />
       <stop style="stop-color: #000000; stop-opacity: 1;" offset="0.9" />
@@ -221,44 +221,44 @@
   <rect class="nol" x="0" y="145" width="1500" height="255" />
   <rect class="ll" x="0" y="400" width="1500" height="150" />
   <rect class="pl" x="0" y="535" width="1500" height="80" />
-  <g id="lwip-detail" transform="translate(5,0)">
+  <g id="emb6-detail" transform="translate(5,0)">
     <g id="application-border">
       <rect id="application-border-box" class="outer-stroke" x="0" y="5"
             width="380" height="70" rx="10" ry="10" />
       <text id="application-border-label" class="outer-text"
             x="190.5" y="45"><tspan>Application / Library</tspan></text>
     </g>
-    <g id="lwip-detail-lwip" transform="translate(0,80)">
+    <g id="emb6-detail-emb6" transform="translate(0,80)">
       <rect id="sys-net-border" class="outer-stroke" x="0" y="37.5"
             width="380" height="312.5" rx="10" ry="10" />
       <rect id="hardware-border-box" class="outer-stroke" x="0" y="420"
             width="380" height="80" rx="10" ry="10" />
-      <g id="lwip-conn">
-        <rect id="lwip-conn-box" class="modbox" x="10" y="25"
+      <g id="emb6-sock">
+        <rect id="emb6-sock-box" class="modbox" x="10" y="25"
               width="360" height="25" />
-        <text id="lwip-conn-label" class="modbox-text"
-              x="190.5" y="42"><tspan>lwip_conn</tspan></text>
+        <text id="emb6-sock-label" class="modbox-text"
+              x="190.5" y="42"><tspan>emb6_sock</tspan></text>
       </g>
-      <g id="conn-app">
-        <path id="conn-app-arrow" d="m 190.5,0 0,20" class="outer-stroke-arrow" />
-        <text id="conn-app-label" class="outer-text-netapi"
-              x="195" y="16"><tspan>conn</tspan></text>
+      <g id="sock-app">
+        <path id="sock-app-arrow" d="m 190.5,0 0,20" class="outer-stroke-arrow" />
+        <text id="sock-app-label" class="outer-text-netapi"
+              x="195" y="16"><tspan>sock</tspan></text>
       </g>
-      <g id="lwip">
-        <rect id="lwip-box" class="modbox" x="10" y="50"
+      <g id="emb6">
+        <rect id="emb6-box" class="modbox" x="10" y="50"
               width="360" height="270" />
-        <text id="lwip-label" class="modbox-text"
-              x="190.5" y="190"><tspan>lwIP</tspan></text>
+        <text id="emb6-label" class="modbox-text"
+              x="190.5" y="190"><tspan>emb6</tspan></text>
       </g>
     <g id="hardware-border">
       <text id="hardware-border-label" class="outer-text"
             x="190.5" y="480"><tspan>Hardware</tspan></text>
     </g>
-      <g id="lwip-netdev-6lo" class="mac-group">
+      <g id="emb6-netdev-6lo" class="mac-group">
         <rect id="netdev-6lo-box" class="modbox mac-box" x="10" y="320"
               width="360" height="50" />
         <text id="netdev-6lo-label" class="modbox-text"
-              x="190" y="352"><tspan>lwip_netdev</tspan></text>
+              x="190" y="352"><tspan>emb6_netdev</tspan></text>
         <path id="netdev-6lo-arrow" d="m 190.5,375 0,20" class="outer-stroke-arrow" />
         <text id="netdev-6lo-label" class="outer-text-netapi"
               x="197" y="391"><tspan>netdev</tspan></text>
@@ -269,16 +269,9 @@
       </g>
     </g>
     <g class="codebox">
-      <text x="390" y="93" id="make-lwip_conn_tcp"><tspan class="codebox-variable">USEMODULE</tspan> += lwip_conn_tcp</text>
-      <text x="390" y="113" id="make-lwip_conn_udp"><tspan class="codebox-variable">USEMODULE</tspan> += lwip_conn_udp</text>
-      <text x="390" y="132" id="make-lwip_conn_ip"><tspan class="codebox-variable">USEMODULE</tspan> += lwip_conn_ip</text>
-      <text x="390" y="232" id="make-lwip_tcp"><tspan class="codebox-variable">USEMODULE</tspan> += lwip_tcp</text>
-      <text x="390" y="252" id="make-lwip_udp"><tspan class="codebox-variable">USEMODULE</tspan> += lwip_udp</text>
-      <text x="390" y="272" id="make-lwip_ipv6"><tspan class="codebox-variable">USEMODULE</tspan> += lwip_ipv6</text>
-      <text x="390" y="292" id="make-lwip_ipv6_autoconfig"><tspan class="codebox-variable">USEMODULE</tspan> += lwip_ipv6_autoconfig</text>
-      <text x="390" y="312" id="make-lwip_ipv6_mld"><tspan class="codebox-variable">USEMODULE</tspan> += lwip_ipv6_mld</text>
-      <text x="390" y="332" id="make-lwip_sixlowpan"><tspan class="codebox-variable">USEMODULE</tspan> += lwip_sixlowpan</text>
-      <text x="390" y="432" id="make-auto_init_lwip_netdev"><tspan class="codebox-variable">USEMODULE</tspan> += lwip_netdev</text>
+      <text x="390" y="113" id="make-emb6_sock_udp"><tspan class="codebox-variable">USEMODULE</tspan> += emb6_sock_udp</text>
+      <text x="390" y="272" id="make-emb6_ipv6"><tspan class="codebox-variable">USEMODULE</tspan> += emb6_router</text>
+      <text x="390" y="432" id="make-auto_init_emb6_netdev"><tspan class="codebox-variable">USEMODULE</tspan> += emb6_netdev</text>
       <text x="390" y="512" id="make-at86rf233"><tspan class="codebox-variable">USEMODULE</tspan> += at86rf233*</text>
     </g>
   </g>

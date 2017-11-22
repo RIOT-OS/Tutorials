@@ -84,9 +84,9 @@
           fill: #C5D2E4;
           stroke: none;
         }
-        #gnrc-detail-conn {
+        #gnrc-detail-sock {
           fill: none;
-          stroke: url(#outer-gradient-conn);
+          stroke: url(#outer-gradient-sock);
           stroke-linejoin: miter;
           stroke-miterlimit: 4;
           stroke-width: 3;
@@ -139,7 +139,7 @@
           fill: #dddddd;
         }
 
-        #gnrc-conn-box,#microcoap-box {
+        #gnrc-sock-box,#microcoap-box {
           fill: #ff99ff;
         }
         #gnrc-tcp-box,#gnrc-udp-box {
@@ -193,7 +193,7 @@
           text-anchor: left;
         }
     </style>
-    <linearGradient id="outer-gradient-conn" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="outer-gradient-sock" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop style="stop-color: #000000; stop-opacity: 0;" offset="0" />
       <stop style="stop-color: #000000; stop-opacity: 0;" offset="0.1" />
       <stop style="stop-color: #000000; stop-opacity: 1;" offset="0.9" />
@@ -249,20 +249,20 @@
             width="370" height="60" />
       <rect id="gnrc-6lo-thread" class="thread" x="5" y="235"
             width="370" height="60" />
-      <g id="gnrc-conn">
-        <rect id="gnrc-conn-box" class="modbox" x="10" y="25"
+      <g id="gnrc-sock">
+        <rect id="gnrc-sock-box" class="modbox" x="10" y="25"
               width="360" height="25" />
-        <text id="gnrc-conn-label" class="modbox-text"
-              x="190.5" y="42"><tspan>gnrc_conn</tspan></text>
+        <text id="gnrc-sock-label" class="modbox-text"
+              x="190.5" y="42"><tspan>gnrc_sock</tspan></text>
       </g>
-      <g id="conn-app">
-        <path id="conn-app-arrow" d="m 190.5,-5 0,25" class="outer-stroke-arrow" />
-        <text id="conn-app-label" class="outer-text-netapi"
-              x="197" y="14.5"><tspan>conn</tspan></text>
+      <g id="sock-app">
+        <path id="sock-app-arrow" d="m 190.5,-5 0,25" class="outer-stroke-arrow" />
+        <text id="sock-app-label" class="outer-text-netapi"
+              x="197" y="14.5"><tspan>sock</tspan></text>
       </g>
-      <g id="netapi-conn-udp">
-        <path id="netapi-conn-udp-arrow" d="m 190.5,55 0,20" class="outer-stroke-arrow" />
-        <text id="netapi-conn-udp-label" class="outer-text-netapi"
+      <g id="netapi-sock-udp">
+        <path id="netapi-sock-udp-arrow" d="m 190.5,55 0,20" class="outer-stroke-arrow" />
+        <text id="netapi-sock-udp-label" class="outer-text-netapi"
               x="197" y="71"><tspan>netapi</tspan></text>
       </g>
       <g id="gnrc-udp" class="thread">
@@ -329,7 +329,7 @@
     </g>
     <g class="codebox">
       <text x="390" y="72" id="make-gnrc_udp"><tspan class="codebox-variable">USEPKG</tspan> += microcoap</text>
-      <text x="390" y="132" id="make-gnrc_udp"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_conn_udp</text>
+      <text x="390" y="132" id="make-gnrc_udp"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_sock_udp</text>
       <text x="390" y="192" id="make-gnrc_udp"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_udp</text>
       <text x="390" y="272" id="make-gnrc_ipv6"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_ipv6_router_default</text>
       <text x="390" y="432" id="make-auto_init_gnrc_netdev"><tspan class="codebox-variable">USEMODULE</tspan> += auto_init_gnrc_netdev*</text>

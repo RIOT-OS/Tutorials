@@ -84,9 +84,9 @@
           fill: #C5D2E4;
           stroke: none;
         }
-        #gnrc-detail-conn {
+        #gnrc-detail-sock {
           fill: none;
-          stroke: url(#outer-gradient-conn);
+          stroke: url(#outer-gradient-sock);
           stroke-linejoin: miter;
           stroke-miterlimit: 4;
           stroke-width: 3;
@@ -139,7 +139,7 @@
           fill: #dddddd;
         }
 
-        #gnrc-conn-box {
+        #gnrc-sock-box {
           fill: #ff99ff;
         }
         #gnrc-tcp-box,#gnrc-udp-box {
@@ -193,7 +193,7 @@
           text-anchor: left;
         }
     </style>
-    <linearGradient id="outer-gradient-conn" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="outer-gradient-sock" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop style="stop-color: #000000; stop-opacity: 0;" offset="0" />
       <stop style="stop-color: #000000; stop-opacity: 0;" offset="0.1" />
       <stop style="stop-color: #000000; stop-opacity: 1;" offset="0.9" />
@@ -243,14 +243,14 @@
             width="370" height="60" />
       <rect id="gnrc-6lo-thread" class="thread" x="5" y="235"
             width="370" height="60" />
-      <g id="netapi-conn-udp">
-        <path id="netapi-conn-udp-arrow" d="m 92.5,0 0,75" class="outer-stroke-arrow" />
-        <text id="netapi-conn-udp-label" class="outer-text-netapi"
+      <g id="netapi-sock-udp">
+        <path id="netapi-sock-udp-arrow" d="m 92.5,0 0,75" class="outer-stroke-arrow" />
+        <text id="netapi-sock-udp-label" class="outer-text-netapi"
               x="99" y="43.5"><tspan>netapi</tspan></text>
       </g>
-      <g id="netapi-conn-ipv6">
-        <path id="netapi-conn-ipv6-arrow" d="m 287.5,0 0,155" class="outer-stroke-arrow" />
-        <text id="netapi-conn-ipv6-label" class="outer-text-netapi"
+      <g id="netapi-sock-ipv6">
+        <path id="netapi-sock-ipv6-arrow" d="m 287.5,0 0,155" class="outer-stroke-arrow" />
+        <text id="netapi-sock-ipv6-label" class="outer-text-netapi"
               x="294" y="84.5"><tspan>netapi</tspan></text>
       </g>
       <g id="gnrc-udp" class="thread">

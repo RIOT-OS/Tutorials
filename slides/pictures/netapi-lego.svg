@@ -65,7 +65,7 @@
         stroke-linecap: round;
       }
 
-      .conn {
+      .sock {
         fill: #ff99ff;
       }
       .tcp,.udp {

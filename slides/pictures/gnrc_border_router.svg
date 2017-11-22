@@ -9,10 +9,10 @@
   <title>RIOT's GNRC border router</title>
   <metadata>
     <rdf:RDF>
-      <cc:Work rdf:about="Example use-case gnrc_conn_udp">
+      <cc:Work rdf:about="Example use-case gnrc_sock_udp">
         <dc:format>image/svg+xml</dc:format>
         <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>RIOT's GNRC Network Stack with UDP and conn</dc:title>
+        <dc:title>RIOT's GNRC Network Stack with UDP and sock</dc:title>
         <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/" />
         <dc:creator>
           <cc:Agent>
@@ -84,9 +84,9 @@
           fill: #C5D2E4;
           stroke: none;
         }
-        #gnrc-detail-conn {
+        #gnrc-detail-sock {
           fill: none;
-          stroke: url(#outer-gradient-conn);
+          stroke: url(#outer-gradient-sock);
           stroke-linejoin: miter;
           stroke-miterlimit: 4;
           stroke-width: 3;
@@ -193,7 +193,7 @@
           text-anchor: left;
         }
     </style>
-    <linearGradient id="outer-gradient-conn" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="outer-gradient-sock" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop style="stop-color: #000000; stop-opacity: 0;" offset="0" />
       <stop style="stop-color: #000000; stop-opacity: 0;" offset="0.1" />
       <stop style="stop-color: #000000; stop-opacity: 1;" offset="0.9" />
