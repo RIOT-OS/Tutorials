@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Freie Universität Berlin
+ * Copyright (C) 2015-18 Freie Universität Berlin
  * Copyright (C) 2016 Hochschule für Angewandte Wissenschaften Hamburg
  *
  * This file is subject to the terms and conditions of the GNU Lesser
@@ -15,6 +15,7 @@
  * @brief       Example application for demonstrating the RIOT network stack
  *
  * @author      Hauke Petersen <hauke.petersen@fu-berlin.de>
+ * @author      Martine Lenders <m.lenders@fu-berlin.de>
  * @author      Peter Kietzmann <peter.kietzmann@haw-hamburg.de>
  *
  * @}
@@ -27,7 +28,7 @@
 #include "thread.h"
 
 #include "net/gnrc.h"
-#include "net/gnrc/ipv6/netif.h"
+#include "net/gnrc/netif.h"
 #include "net/gnrc/ipv6.h"
 
 #define MAIN_QUEUE_SIZE     (8)
@@ -48,12 +49,10 @@ static void *_ipv6_fwd_eventloop(void *arg)
     (void)arg;
 
     msg_t msg, msg_q[8];
-    gnrc_netreg_entry_t me_reg;
+    gnrc_netreg_entry_t me_reg = GNRC_NETREG_ENTRY_INIT_PID(GNRC_NETREG_DEMUX_CTX_ALL,
+                                                            thread_getpid());
 
     msg_init_queue(msg_q, 8);
-
-    me_reg.demux_ctx = GNRC_NETREG_DEMUX_CTX_ALL;
-    me_reg.pid = thread_getpid();
 
     gnrc_netreg_register(GNRC_NETTYPE_SIXLOWPAN, &me_reg);
 
@@ -62,25 +61,31 @@ static void *_ipv6_fwd_eventloop(void *arg)
         gnrc_pktsnip_t *pkt = msg.content.ptr;
         if(msg.type == GNRC_NETAPI_MSG_TYPE_SND) {
             gnrc_pktsnip_t *ipv6 = gnrc_pktsnip_search_type(pkt, GNRC_NETTYPE_IPV6);
+            ipv6_addr_t addrs[GNRC_NETIF_IPV6_ADDRS_NUMOF];
+            int res;
             ipv6 = ipv6->data;
 
             ipv6_hdr_t *ipv6_hdr =(ipv6_hdr_t *)ipv6;
 
             /* get the first IPv6 interface and prints its address */
-            kernel_pid_t ifs[GNRC_NETIF_NUMOF];
-            gnrc_netif_get(ifs);
-            gnrc_ipv6_netif_t *entry = gnrc_ipv6_netif_get(ifs[0]);
-            for (int i = 0; i < GNRC_IPV6_NETIF_ADDR_NUMOF; i++) {
-                if ( (!ipv6_addr_is_link_local(&entry->addrs[i].addr)) && (!ipv6_addr_is_link_local(&ipv6_hdr->src)) 
-                    && (!ipv6_addr_is_link_local(&ipv6_hdr->dst)) && !(entry->addrs[i].flags & GNRC_IPV6_NETIF_ADDR_FLAGS_NON_UNICAST)
-                    && (!ipv6_addr_is_unspecified(&entry->addrs[i].addr)) ) {
-
-                    if(!ipv6_addr_equal(&entry->addrs[i].addr, &(ipv6_hdr->src))){
-
-                        char addr_str[IPV6_ADDR_MAX_STR_LEN];
-                        printf("IPv6 ROUTER: forward from src = %s ", ipv6_addr_to_str(addr_str, &(ipv6_hdr->src), sizeof(addr_str)) );
-                        printf("to dst = %s\n",ipv6_addr_to_str(addr_str, &(ipv6_hdr->dst), sizeof(addr_str)));
-                    }
+            gnrc_netif_t *netif = gnrc_netif_iter(NULL);
+            res = gnrc_netif_ipv6_addrs_get(netif, addrs, sizeof(addrs));
+            if (res < 0) {
+                /* an error occurred, just continue */
+                continue;
+            }
+            for (unsigned i = 0; i < (res / sizeof(ipv6_addr_t)); i++) {
+                if ((!ipv6_addr_is_link_local(&addrs[i])) &&
+                    (!ipv6_addr_is_link_local(&ipv6_hdr->src)) &&
+                    (!ipv6_addr_is_link_local(&ipv6_hdr->dst)) &&
+                    (!ipv6_addr_equal(&addrs[i], &(ipv6_hdr->src)))) {
+                    char addr_str[IPV6_ADDR_MAX_STR_LEN];
+                    printf("IPv6 ROUTER: forward from src = %s ",
+                           ipv6_addr_to_str(addr_str, &(ipv6_hdr->src),
+                                            sizeof(addr_str)) );
+                    printf("to dst = %s\n",
+                           ipv6_addr_to_str(addr_str, &(ipv6_hdr->dst),
+                                            sizeof(addr_str)));
                 }
             }
         }

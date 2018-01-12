@@ -61,6 +61,11 @@ int udp_send(int argc, char **argv)
         puts("Error: unable to parse destination address");
         return 1;
     }
+    if (ipv6_addr_is_link_local((ipv6_addr_t *)&remote.addr)) {
+        /* choose first interface when address is link local */
+        gnrc_netif_t *netif = gnrc_netif_iter(NULL);
+        remote.netif = (uint16_t)netif->pid;
+    }
     remote.port = atoi(argv[2]);
     if((res = sock_udp_send(NULL, argv[3], strlen(argv[3]), &remote)) < 0) {
         puts("could not send");
