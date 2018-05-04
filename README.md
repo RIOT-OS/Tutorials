@@ -67,6 +67,11 @@ Make sure your user is a member of the usergroup `vboxusers`. On Linux you can a
 
 Note that you need to log out once to reload a Linux user's group assignments
 
+### Other learning resources
+
+You can also find other detailed learning resources in the [course](course)
+directory of this repository.
+
 ## License
 This work and all its related code and documents are licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
