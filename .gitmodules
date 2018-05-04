@@ -1,3 +1,10 @@
 [submodule "RIOT"]
 	path = RIOT
 	url = https://github.com/RIOT-OS/RIOT.git
+[submodule "course/exercises"]
+	path = course/exercises
+	url = https://github.com/aabadie/riot-course-exercises
+[submodule "course/RIOT"]
+	path = course/RIOT
+	url = https://github.com/RIOT-OS/RIOT
+	branch = 2018.04-branch
