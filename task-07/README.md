@@ -20,14 +20,25 @@ ping6 <RIOT-IPv6-addr>%tapbr0
 Note: on MAC use `bridge0` instead of `tapbr0`.
 
 ## Task 7.2: Extend `gnrc_minimal` application
-* Add the `gnrc_udp` module to the application's [Makefile](Makefile)
+* Add the `gnrc_udp` module to the application's [Makefile]
+  (https://github.com/RIOT-OS/RIOT/blob/master/examples/gnrc_minimal/Makefile)
+* To be able to receive packets, a [message queue](http://doc.riot-os.org/group__net__gnrc.html) must be 
+  created using [msg_init_queue](https://doc.riot-os.org/group__core__msg.html#ga480e6f32c8ab18579b62a890f3fda2cd):
+
+```C
+msg_t msg_queue[num];
+msg_init_queue(msg_queue, num);
+```
+
+Note: `num` must be in powers of 2.
+
 * You can register for packets of a certain type and context (port 8888 in our
   case) using `gnrc_netreg_register()` from [`net/gnrc/netreg.h`](https://doc.riot-os.org/group__net__gnrc__netreg.html):
 * The current thread can be obtained with the `sched_active_pid` variable from
   `sched.h`
 
 ```C
-gnrc_netreg_entry_t server = {NULL, 8888, sched_active_pid};
+gnrc_netreg_entry_t server = GNRC_NETREG_ENTRY_INIT_PID(8888, sched_active_pid);
 gnrc_netreg_register(GNRC_NETTYPE_UDP, &server);
 ```
 
