@@ -8,12 +8,13 @@ void *thread_handler(void *arg);
 Use [`thread_create()`](https://doc.riot-os.org/thread_8h.html#a87c94d383e64a09974fc8665f82a99b3) from
 [`thread.h`](https://doc.riot-os.org/thread_8h.html) to start it
 ```C
-pid = thread_create(stack, sizeof(stack),
+thread_create(stack, sizeof(stack),
                     THREAD_PRIORITY_MAIN - 1,
                     THREAD_CREATE_STACKTEST,
                     thread_handler,
                     NULL, "thread");
 ```
+thread_create returns a kernel_pid_t type, which can be helpful to assign to a variable (but not necessary for this lesson).
 
 ## Task 3.1: Start a thread
 * Start the thread `"thread"` from within [`main()`](main.c#L15-L25)
