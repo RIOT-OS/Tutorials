@@ -10,7 +10,10 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
 * Install latest [VirtualBox](https://www.virtualbox.org/wiki/Downloads) & [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads) for **your system**
 * Install [Vagrant](https://www.vagrantup.com/downloads.html)
 * Linux, OSX:
-    * `git clone --recursive https://github.com/RIOT-OS/Tutorials`
+    ```Shell
+    git clone --recursive https://github.com/RIOT-OS/Tutorials
+    cd Tutorials
+    ```
 * Windows:
     * set `git config --global core.autocrlf input` before cloning
     * clone the `Tutorials` and the `RIOT` submodule as follows:
@@ -64,6 +67,10 @@ Make sure you have the [Extension Pack](https://www.virtualbox.org/wiki/Download
 Make sure your user is a member of the usergroup `vboxusers`. On Linux you can add the current user with
 
 `usermod -a -G vboxusers $USER`.
+
+You can check the groups of your user with
+
+`groups`.
 
 Note that you need to log out once to reload a Linux user's group assignments
 
