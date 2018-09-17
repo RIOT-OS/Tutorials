@@ -15,7 +15,11 @@ For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-O
     cd Tutorials
     ```
 * Windows:
-    * set `git config --global core.autocrlf input` before cloning
+    * set
+      ```Shell
+      git config --global core.autocrlf input
+      ```
+      before cloning
     * clone the `Tutorials` and the `RIOT` submodule as follows:
     ```Shell
     git clone https://github.com/RIOT-OS/Tutorials
