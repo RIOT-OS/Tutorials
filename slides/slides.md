@@ -227,9 +227,8 @@ USEMODULE += xtimer
 # General networking architecture
 ## RIOT's Networking architecture
 * Designed to integrate any network stack into RIOT
-
-\only{<1>}{\includegraphics[width=\textwidth]{pictures/overview-net.pdf}}
-\only{<2>}{\includegraphics[width=\textwidth]{pictures/overview-net-netdev.pdf}}
+\only<1>{\includegraphics[width=\textwidth]{pictures/overview-net.pdf}}
+\only<2>{\includegraphics[width=\textwidth]{pictures/overview-net-netdev.pdf}}
 
 ## Including the network device driver
 * Go to task-05 directory (`cd ../task-05`)
@@ -244,7 +243,7 @@ USEMODULE += auto_init_gnrc_netif
 * Use `tapsetup` script in RIOT repository:
 
 ```sh
-./../RIOT/dist/tools/tapsetup/tapsetup -c 2
+../RIOT/dist/tools/tapsetup/tapsetup -c 2
 ```
 
 * Creates
@@ -255,18 +254,18 @@ USEMODULE += auto_init_gnrc_netif
 ## Task 5.1 -- Your first networking application
 * Run the application on `native`: `PORT=tap0 make all term`
 * Type `help`
-* Run a second instance with `PORT=tap1 make all term`
+* Run a second instance with `PORT=tap1 make term`
 * Type `ifconfig` on both to get hardware address and interface number
 * Use `txtsnd` command to exchange messages between the two instances
 
-## Task 5.2 -- Use your application on real hardware
-* Compile, flash, and run on the board `BOARD=samr21-xpro make all flash term`
+## Task 5.2 -- Use your application on real hardware (using the testbed)
+* Compile, flash, and run on the board `BOARD=iotlab-m3 make iotlab-flash iotlab-term`
 * Type `ifconfig` to get your hardware addresses
 * Use `txtsnd` to send one of your neighbors a friendly message
 
 ## RIOT's Networking architecture
-\only{<1>}{\includegraphics[width=\textwidth]{pictures/overview-net.pdf}}
-\only{<2>}{\includegraphics[width=\textwidth]{pictures/overview-net-conn.pdf}}
+\only<1>{\includegraphics[width=\textwidth]{pictures/overview-net.pdf}}
+\only<2>{\includegraphics[width=\textwidth]{pictures/overview-net-sock.pdf}}
 
 ## conn
 * collection of unified connectivity APIs to the transport layer
