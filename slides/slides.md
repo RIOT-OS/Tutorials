@@ -106,6 +106,15 @@ int main(void)
     (or other `BOARD` if available)
 2. Verify output of `RIOT_BOARD`
 
+# RIOT's architecture
+
+## Structural elements of RIOT
+
+![](pictures/riot-structure.svg) \
+
+
+* Focus of this tutorial: `core`, `sys`, and `sys/net`
+
 # Custom shell commands
 ## Writing a shell handler
 * Shell command handlers in RIOT are functions with signature
