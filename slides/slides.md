@@ -207,12 +207,12 @@ pid = thread_create(stack, sizeof(stack),
 ## `xtimer` primer
 * `xtimer` is the high level API of RIOT to multiplex hardware timers
 * Examples for functionality:
-    - `xtimer_now()` to get current system time in microseconds
+    - `xtimer_now_usec()` to get current system time in microseconds
     - `xtimer_sleep(sec)` to sleep `sec` seconds
     - `xtimer_usleep(usec)` to sleep `usec` microseconds
 
 ## Task 4.1 -- Use `xtimer`
-* Reminder: Functions `xtimer_now()`, `xtimer_sleep()`, and `xtimer_usleep()` were introduced
+* Reminder: Functions `xtimer_now_usec()`, `xtimer_sleep()`, and `xtimer_usleep()` were introduced
 * Go to task-04 directory (`cd ../task-04`)
 * Note the inclusion of `xtimer` in Makefile
 
