@@ -256,10 +256,10 @@
         <rect id="netdev-6lo-box" class="modbox mac-box" x="10" y="320"
               width="360" height="50" />
         <text id="netdev-6lo-label" class="modbox-text"
-              x="190.5" y="340"><tspan>gnrc_netdev</tspan></text>
+              x="190.5" y="340"><tspan>gnrc_netif</tspan></text>
         <rect class="submodbox" x="15" y="345" width="350" height="23" />
-        <text id="gnrc-netdev-eth-label" class="submodbox-text"
-              x="190.5" y="362"><tspan>gnrc_netdev_ieee802154</tspan></text>
+        <text id="gnrc-netif-eth-label" class="submodbox-text"
+              x="190.5" y="362"><tspan>gnrc_netif_ieee802154</tspan></text>
         <path class="thread-marker" d="M 365 320 a 5 5 0 1 0 1.464 -3.536" />
         <path id="netdev-6lo-arrow" d="m 190.5,375 0,20" class="outer-stroke-arrow" />
         <text id="netdev-6lo-label" class="outer-text-netapi"
@@ -272,8 +272,8 @@
     </g>
     <g class="codebox">
       <text x="390" y="272" id="make-gnrc_sixlowpan_nd_router"><tspan class="codebox-variable">USEPKG</tspan> += ccn-lite</text>
-      <text x="390" y="432" id="make-auto_init_gnrc_netdev"><tspan class="codebox-variable">USEMODULE</tspan> += auto_init_gnrc_netdev*</text>
-      <text x="390" y="512" id="make-auto_init_gnrc_netdev"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_netdev_default*</text>
+      <text x="390" y="432" id="make-auto_init_gnrc_netif"><tspan class="codebox-variable">USEMODULE</tspan> += auto_init_gnrc_netif</text>
+      <text x="390" y="512" id="make-gnrc_netdev_default"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_netdev_default</text>
     </g>
   </g>
 </svg>
