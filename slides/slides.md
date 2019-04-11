@@ -151,7 +151,7 @@ foobar
 ```
 
 ## Task 2.2 -- Control the hardware
-* `board.h` defines a macro `LED0_TOGGLE` to toggle the primary LED on the board.
+* `led.h` defines a macro `LED0_TOGGLE` to toggle the primary LED on the board.
 * Write a command handler `toggle` in main.c that toggles the primary LED on the board
 
 # Multithreading
