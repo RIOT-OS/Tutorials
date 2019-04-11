@@ -266,7 +266,7 @@ USEMODULE += auto_init_gnrc_netif
 
 ## RIOT's Networking architecture
 \only{<1>}{\includegraphics[width=\textwidth]{pictures/overview-net.pdf}}
-\only{<2>}{\includegraphics[width=\textwidth]{pictures/overview-net-conn.pdf}}
+\only{<2>}{\includegraphics[width=\textwidth]{pictures/overview-net-sock.pdf}}
 
 ## sock
 * collection of unified connectivity APIs to the transport layer
