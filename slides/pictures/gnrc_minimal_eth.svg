@@ -84,9 +84,9 @@
           fill: #C5D2E4;
           stroke: none;
         }
-        #gnrc-detail-conn {
+        #gnrc-detail-sock {
           fill: none;
-          stroke: url(#outer-gradient-conn);
+          stroke: url(#outer-gradient-sock);
           stroke-linejoin: miter;
           stroke-miterlimit: 4;
           stroke-width: 3;
@@ -139,7 +139,7 @@
           fill: #dddddd;
         }
 
-        #gnrc-conn-box {
+        #gnrc-sock-box {
           fill: #ff99ff;
         }
         #gnrc-tcp-box,#gnrc-udp-box {
@@ -193,7 +193,7 @@
           text-anchor: left;
         }
     </style>
-    <linearGradient id="outer-gradient-conn" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="outer-gradient-sock" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop style="stop-color: #000000; stop-opacity: 0;" offset="0" />
       <stop style="stop-color: #000000; stop-opacity: 0;" offset="0.1" />
       <stop style="stop-color: #000000; stop-opacity: 1;" offset="0.9" />

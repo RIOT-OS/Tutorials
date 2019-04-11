@@ -68,9 +68,9 @@
           fill: #C5D2E4;
           stroke: none;
         }
-        #gnrc-detail-conn {
+        #gnrc-detail-sock {
           fill: none;
-          stroke: url(#outer-gradient-conn);
+          stroke: url(#outer-gradient-sock);
           stroke-linejoin: miter;
           stroke-miterlimit: 4;
           stroke-width: 3;
@@ -121,7 +121,7 @@
     <filter id="blur" x="0" y="0">
       <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
     </filter>
-    <linearGradient id="outer-gradient-conn" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="outer-gradient-sock" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop style="stop-color: #000000; stop-opacity: 0;" offset="0" />
       <stop style="stop-color: #000000; stop-opacity: 0;" offset="0.1" />
       <stop style="stop-color: #000000; stop-opacity: 1;" offset="0.9" />
@@ -149,10 +149,10 @@
       <text id="application-border-label" class="outer-text"
             x="286.5" y="50"><tspan>Application / Library</tspan></text>
     </g>
-    <g id="gnrc-conn-tcp">
-      <path id="conn-tcp-arrow" d="m 286.5,85 0,20" class="outer-stroke-arrow" />
-      <text id="conn-tcp-label" class="outer-text-netapi"
-            x="293" y="101"><tspan>conn</tspan></text>
+    <g id="gnrc-sock-tcp">
+      <path id="sock-tcp-arrow" d="m 286.5,85 0,20" class="outer-stroke-arrow" />
+      <text id="sock-tcp-label" class="outer-text-netapi"
+            x="293" y="101"><tspan>sock</tspan></text>
     </g>
     <g class="blurred" id="stack-border">
       <rect id="sys-net-border" class="outer-stroke" x="0" y="110"

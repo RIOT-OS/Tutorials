@@ -268,23 +268,23 @@ USEMODULE += auto_init_gnrc_netif
 \only{<1>}{\includegraphics[width=\textwidth]{pictures/overview-net.pdf}}
 \only{<2>}{\includegraphics[width=\textwidth]{pictures/overview-net-conn.pdf}}
 
-## conn
+## sock
 * collection of unified connectivity APIs to the transport layer
 * What's the problem with POSIX sockets?
     - too generic for most use-cases
     - numerical file descriptors (internal storage of state required)
     - in general: too complex for usage, too complex for porting
 * protocol-specific APIs:
-    - `conn_ip` (raw IP)
-    - `conn_udp` (UDP)
-    - `conn_tcp` (TCP)
+    - `sock_ip` (raw IP)
+    - `sock_udp` (UDP)
+    - `sock_tcp` (TCP)
     - ...
 * both IPv4 and IPv6 supported
 
 ## Task 6.1 -- Use UDP for messaging
 * Go to `task-06` directory `cd ../task-06`
-* Note the addition of `gnrc_conn_udp` to Makefile
-* `udp.c` utilizes `conn_udp_sendto()` and `conn_udp_recvfrom()` to exchange UDP packets
+* Note the addition of `gnrc_sock_udp` to Makefile
+* `udp.c` utilizes `sock_udp_send()` and `sock_udp_recv()` to exchange UDP packets
 * Compile and run on two `native` instances
 * Type `help`
 * Use `udps 8888` to start a UDP server on port 8888 on first instance (check with `ps`)
@@ -507,7 +507,7 @@ Pseudo-module dependencies
 ## Make your application stack independent
 * `*` = name might be subject to change
 
-![](pictures/gnrc_networking_conn.svg)
+![](pictures/gnrc_networking_sock.svg)
 
 ## `microcoap` example
 * `*` = name might be subject to change
@@ -522,12 +522,12 @@ Pseudo-module dependencies
 ## lwIP instead of GNRC
 * `*` = name might differ on other devices
 
-![](pictures/lwip_conn.svg)
+![](pictures/lwip_sock.svg)
 
 ## emb6 (uIP-fork) instead of GNRC
 * `*` = name might differ on other devices
 
-![](pictures/emb6_conn.svg)
+![](pictures/emb6_sock.svg)
 
 ## `ccn_lite_relay` example
 * `*` = name might be subject to change
