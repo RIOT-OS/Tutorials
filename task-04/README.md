@@ -4,7 +4,7 @@
 [`xtimer`](https://doc.riot-os.org/group__sys__xtimer.html) is the high level API of RIOT to multiplex hardware timers.
 For this task we need only the following functions
 
-    - `xtimer_now()` to get current system time in microseconds
+    - `xtimer_now_usec()` to get current system time in microseconds
     - `xtimer_sleep(sec)` to sleep `sec` seconds
     - `xtimer_usleep(usec)` to sleep `usec` microseconds
 
