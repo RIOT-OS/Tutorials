@@ -346,13 +346,16 @@ echo "hello" | nc -6u <RIOT-IPv6-addr>%tap0 8888
 * Both protocol implementation and users can register to be interested in type + certain context (e.g. port in UDP)
 
 ```C
-gnrc_netreg_entry_t ipv6_handler = { NULL,
-                               GNRC_NETREG_DEMUX_CTX_ALL,
-                               ipv6_handler_pid};
+gnrc_netreg_entry_t ipv6_handler =
+    GNRC_NETREG_ENTRY_INIT_PID(
+        GNRC_NETREG_DEMUX_CTX_ALL, ipv6_handler_pid
+    );
 gnrc_netreg_register(GNRC_NETTYPE_IPV6, &ipv6_handler);
 
-gnrc_netreg_entry_t dns_handler = { NULL, PORT_DNS,
-                              dns_handler_pid};
+gnrc_netreg_entry_t dns_handler =
+    GNRC_NETREG_ENTRY_INIT_PID(
+        PORT_DNS, dns_handler_pid
+    );
 gnrc_netreg_register(GNRC_NETTYPE_UDP, &dns_handler);
 ```
 
@@ -384,12 +387,10 @@ ls
 ```
 
 ## `gnrc_minimal` example (`native`)
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_minimal_eth.svg)
 
 ## `gnrc_minimal` example (`samr21-xpro`)
-* `*` name might be subject to change
 
 ![](pictures/gnrc_minimal_ieee802154.svg)
 
@@ -402,17 +403,15 @@ Pseudo-module dependencies
     - `gnrc_sixlowpan_iphc`
 * `gnrc_ipv6_default`:
     - `gnrc_ipv6`
-    - `gnrc_ndp_host` (if non-6Lo interface present)
+    - `gnrc_ipv6_nib`
     - `gnrc_sixlowpan_default` (if 6Lo interface present)
-    - `gnrc_sixlowpan_nd` (if 6Lo interface present)
+    - `gnrc_ipv6_nib_6ln` (if 6Lo interface present)
 
 ## `gnrc_minimal` example (`native`)
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_minimal_eth_dep.svg)
 
 ## `gnrc_minimal` example (`samr21-xpro`)
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_minimal_ieee802154_dep.svg)
 
@@ -428,7 +427,6 @@ ping6 <RIOT-IPv6-addr>%tap0
 
 ## `gnrc_minimal` example (`samr21-xpro`)
 * Adding a simple application
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_minimal_app.svg)
 
@@ -441,7 +439,8 @@ ping6 <RIOT-IPv6-addr>%tap0
 ```C
 /* include "sched.h", "net/gnrc/netreg.h", and "net/gnrc/pktbuf.h"! */
 unsigned int count = 0; msg_t msg;
-gnrc_netreg_t server = {NULL, 8888, sched_active_pid};
+gnrc_netreg_t server = GNRC_NETREG_ENTRY_INIT_PID(
+        8888, sched_active_pid);
 gnrc_netreg_register(GNRC_NETTYPE_UDP, &app);
 
 while (1) {
@@ -461,12 +460,10 @@ echo "hello" | nc -6u <RIOT-IPv6-addr>%tap0 8888
 ```
 
 ## `gnrc_networking` example (`native`)
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_networking_eth.svg)
 
 ## `gnrc_networking` example (`samr21-xpro`)
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_networking_ieee802154.svg)
 
@@ -475,82 +472,56 @@ Pseudo-module dependencies
 
 * `gnrc_ipv6_router_default`:
     - `gnrc_ipv6`
-    - `gnrc_ndp_router` (if non-6Lo interface present)
+    - `gnrc_ipv6_nib_router` (if non-6Lo interface present)
     - `gnrc_sixlowpan_default` (if 6Lo interface present)
-    - `gnrc_sixlowpan_nd_router` (if 6Lo interface present)
+    - `gnrc_ipv6_nib_6lr` (if 6Lo interface present)
 
 ## `gnrc_networking` example (`native`)
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_networking_eth_dep.svg)
 
 ## `gnrc_networking` example (`samr21-xpro`)
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_networking_ieee802154_dep.svg)
 
 ## Task 7.3 -- Send your neighbor some messages again
 * Go to `gnrc_networking` example: `cd ../gnrc_networking`
-* Have a look in `udp.c` how packets are constructed and send
+* Have a look in `udp.c` how packets are constructed and sent
 * Compile, flash, and run on the board `BOARD=samr21-xpro make all flash term`
 * Type `help`
 * Start UDP server on port 8888 using `udp server 8888`
 * Get your IPv6 address using `ifconfig`
 * Send your neighbor some messages using `udp send`
 
-## `gnrc_tftp` example
-* for simplicity only the `samr21-xpro` examples from now on
-* `*` = name might be subject to change
-
-![](pictures/gnrc_tftp.svg)
-
 ## Make your application stack independent
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_networking_sock.svg)
 
-## `microcoap` example
-* `*` = name might be subject to change
-
-![](pictures/gnrc_microcoap.svg)
-
 ## `posix_sockets` example
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_posix_sockets.svg)
 
 ## lwIP instead of GNRC
-* `*` = name might differ on other devices
 
 ![](pictures/lwip_sock.svg)
 
-## emb6 (uIP-fork) instead of GNRC
-* `*` = name might differ on other devices
-
-![](pictures/emb6_sock.svg)
-
 ## `ccn_lite_relay` example
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_ccn_lite_relay.svg)
 
 ## CCN-lite over UDP example
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_ccn_over_udp.svg)
 
 ## CCN-lite over IPv6 example
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_ccn_over_ipv6.svg)
 
 ## Example: multiple radios of the same type
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_multi_radio.svg)
 
 ## `gnrc_border_router` example
-* `*` = name might be subject to change
 
 ![](pictures/gnrc_border_router.svg)
 

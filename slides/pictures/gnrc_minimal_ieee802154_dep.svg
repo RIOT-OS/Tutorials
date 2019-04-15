@@ -262,19 +262,19 @@
               x="190.5" y="272"><tspan>gnrc_sixlowpan</tspan></text>
         <path class="thread-marker" d="M 365 240 a 5 5 0 1 0 1.464 -3.536" />
       </g>
-      <g id="netapi-6lo-netdev">
-        <path id="netapi-6lo-netdev-arrow" d="m 190.5,295 0,20" class="outer-stroke-arrow" />
-        <text id="netapi-6lo-netdev-label" class="outer-text-netapi"
+      <g id="netapi-6lo-netif">
+        <path id="netapi-6lo-netif-arrow" d="m 190.5,295 0,20" class="outer-stroke-arrow" />
+        <text id="netapi-6lo-netif-label" class="outer-text-netapi"
               x="197" y="311"><tspan>netapi</tspan></text>
       </g>
       <g id="gnrc-netdev-ipv6" class="mac-group">
         <rect id="netdev-ipv6-mac-box" class="modbox mac-box" x="10" y="320"
               width="360" height="50" />
         <text id="netdev-ipv6-mac-label" class="modbox-text"
-              x="190.5" y="340"><tspan>gnrc_netdev</tspan></text>
+              x="190.5" y="340"><tspan>gnrc_netif</tspan></text>
         <rect class="submodbox" x="15" y="345" width="350" height="23" />
         <text id="gnrc-netdev-eth-label" class="submodbox-text"
-              x="190.5" y="362"><tspan>gnrc_netdev_ieee802154</tspan></text>
+              x="190.5" y="362"><tspan>gnrc_netif_ieee802154</tspan></text>
         <path class="thread-marker" d="M 365 320 a 5 5 0 1 0 1.464 -3.536" />
         <path id="netdev-ipv6-arrow" d="m 190.5,375 0,20" class="outer-stroke-arrow" />
         <text id="netdev-ipv6-label" class="outer-text-netapi"
@@ -287,8 +287,8 @@
     </g>
     <g class="codebox">
       <text x="390" y="272" id="make-gnrc_ipv6"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_ipv6_default</text>
-      <text x="390" y="432" id="make-auto_init_gnrc_netdev"><tspan class="codebox-variable">USEMODULE</tspan> += auto_init_gnrc_netdev*</text>
-      <text x="390" y="512" id="make-auto_init_gnrc_netdev"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_netdev_default*</text>
+      <text x="390" y="432" id="make-auto_init_gnrc_netdev"><tspan class="codebox-variable">USEMODULE</tspan> += auto_init_gnrc_netif</text>
+      <text x="390" y="512" id="make-auto_init_gnrc_netdev"><tspan class="codebox-variable">USEMODULE</tspan> += gnrc_netdev_default</text>
     </g>
   </g>
 </svg>
