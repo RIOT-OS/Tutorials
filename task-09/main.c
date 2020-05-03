@@ -61,7 +61,7 @@ static void *_ipv6_fwd_eventloop(void *arg)
         gnrc_pktsnip_t *pkt = msg.content.ptr;
         if(msg.type == GNRC_NETAPI_MSG_TYPE_SND) {
             gnrc_pktsnip_t *ipv6 = gnrc_pktsnip_search_type(pkt, GNRC_NETTYPE_IPV6);
-            ipv6_addr_t addrs[GNRC_NETIF_IPV6_ADDRS_NUMOF];
+            ipv6_addr_t addrs[CONFIG_GNRC_NETIF_IPV6_ADDRS_NUMOF];
             int res;
             ipv6 = ipv6->data;
 
