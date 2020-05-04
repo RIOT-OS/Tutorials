@@ -20,7 +20,7 @@
 
 #include <stdio.h>
 
-#include "tlsf-malloc.h"
+#include "tlsf.h"
 #include "msg.h"
 #include "shell.h"
 #include "ccn-lite-riot.h"
