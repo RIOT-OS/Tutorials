@@ -21,7 +21,7 @@ USEMODULE += auto_init_gnrc_netif
 * Use `tapsetup` script in RIOT repository:
 
 ```sh
-./../RIOT/dist/tools/tapsetup/tapsetup -c 2
+sudo ./../RIOT/dist/tools/tapsetup/tapsetup -c 2
 ```
 
 * Creates
