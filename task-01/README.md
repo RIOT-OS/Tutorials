@@ -14,6 +14,8 @@
     Command              Description
     ---------------------------------------
     reboot               Reboot the node
+    version              Prints current RIOT_VERSION
+    pm                   interact with layered PM subsystem
     ps                   Prints information about running threads.
     ```
 
@@ -21,11 +23,11 @@
     ```
     > ps
     ps
-            pid | name                 | state    Q | pri | stack ( used) | base       | current
-              - | isr_stack            | -        - |   - |  8192 (   -1) |  0x8055520 |  0x8055520
-              1 | idle                 | pending  Q |  15 |  8192 ( 6240) |  0x8053240 |  0x80539dd
-              2 | main                 | running  Q |   7 | 12288 ( 9312) |  0x8050240 |  0x8050ddd
-                | SUM                  |            |     | 28672 (15552)
+            pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+              - | isr_stack            | -        - |   - |   8192 (   -1) ( 8193) | 0x565b8380 | 0x565b8380
+              1 | idle                 | pending  Q |  15 |   8192 (  436) ( 7756) | 0x565b60a0 | 0x565b7f00
+              2 | main                 | running  Q |   7 |  12288 ( 3196) ( 9092) | 0x565b30a0 | 0x565b5f00
+                | SUM                  |            |     |  28672 ( 3632) (25040)
     ```
 
 4.  Add a print statement to the `main()` function to output the name of the board.
