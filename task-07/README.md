@@ -34,11 +34,11 @@ Note: `num` must be in powers of 2.
 
 * You can register for packets of a certain type and context (port 8888 in our
   case) using `gnrc_netreg_register()` from [`net/gnrc/netreg.h`](https://doc.riot-os.org/group__net__gnrc__netreg.html):
-* The current thread can be obtained with the `sched_active_pid` variable from
-  `sched.h`
+* The current thread can be obtained with the `thread_getpid()` function from
+  `thread.h`
 
 ```C
-gnrc_netreg_entry_t server = GNRC_NETREG_ENTRY_INIT_PID(8888, sched_active_pid);
+gnrc_netreg_entry_t server = GNRC_NETREG_ENTRY_INIT_PID(8888, thread_getpid());
 gnrc_netreg_register(GNRC_NETTYPE_UDP, &server);
 ```
 
