@@ -24,6 +24,12 @@ Use the `ifconfig` command to obtain the `<id_id>`.
 
 ## Task 9.1: Initialize RPL
 
+* First of all we need to initialize RPL in all nodes using `rpl init`:
+
+```
+rpl init <if_id>
+```
+
 * In order to use RPL we have to choose **one** RPL root node and configure a global IPv6 address for it. This is simply done by adding the address to the network interface (`<if_id>`) via `ifconfig`:
 
 ```
