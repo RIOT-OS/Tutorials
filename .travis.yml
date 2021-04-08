@@ -1,6 +1,8 @@
 sudo: required
 
-language: minimal
+language: c
+
+cache: ccache
 
 services:
   - docker
@@ -10,6 +12,7 @@ before_install:
 
 env:
   global:
+  - CCACHE=ccache
   - BUILD_IN_DOCKER=1
   - WERROR=0
 
