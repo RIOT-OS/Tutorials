@@ -15,7 +15,7 @@ It uses the [example applications in the RIOT repository](https://github.com/RIO
 * Ping RIOT instance from Linux:
 
 ```sh
-ping6 <RIOT-IPv6-addr>%tapbr0
+ping <RIOT-IPv6-addr>%tapbr0
 ```
 Note: on MAC use `bridge0` instead of `tapbr0`.
 

@@ -431,7 +431,7 @@ Pseudo-module dependencies
 * Ping RIOT instance from Linux:
 
 ```sh
-ping6 <RIOT-IPv6-addr>%tap0
+ping <RIOT-IPv6-addr>%tap0
 ```
 
 ## `gnrc_minimal` example (`samr21-xpro`)

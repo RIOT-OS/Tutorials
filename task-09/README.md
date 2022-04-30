@@ -53,6 +53,6 @@ rpl root 1 2001:db8::1
 
 ## Pinging "distant" nodes
 
-* Use the ping6 command to ping global address of a "distant" node.
+* Use the ping command to ping global address of a "distant" node.
 * Most likely, in this setup the root node will be the only intermediate hop. It should print some rough information about forwarding IPv6 packets
 * Additionally you can try to transmit UDP packets (explore the `udp` commandset)
