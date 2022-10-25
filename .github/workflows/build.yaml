@@ -1,0 +1,46 @@
+name: Build tasks
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '[0-9][0-9][0-9][0-9].[0-9][0-9]-RC[0-9]*'
+      - '[0-9][0-9][0-9][0-9].[0-9][0-9]'
+      - '[0-9][0-9][0-9][0-9].[0-9][0-9].*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        - board: [native, samr21-xpro, pba-d-01-kw2x]
+        - app_dir:
+          - task-01
+          - task-02
+          - task-03
+          - task-04
+          - task-05
+          - task-06
+          # task-07
+          - RIOT/examples/gnrc_minimal
+          - RIOT/examples/gnrc_networking
+          - task-08
+          - task-09
+    steps:
+    - uses: actions/checkout@main
+      with:
+        fetch-depth: 0
+    - name: Fetch riot/static-test-tools Docker image
+      run: docker pull riot/riotbuild:latest
+    - name: Build test
+      env:
+        BUILD_IN_DOCKER: 1
+        WERROR: 0
+        BOARD: ${{ matrix.board }}
+      run: |
+        make -C "${{ matrix.app_dir }}"
