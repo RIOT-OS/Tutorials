@@ -29,7 +29,6 @@ USEMODULE += gnrc_sock_udp
    version              Prints current RIOT_VERSION
    pm                   interact with layered PM subsystem
    ps                   Prints information about running threads.
-   ping6                Ping via ICMPv6
    ping                 Ping via ICMPv6
    random_init          initializes the PRNG
    random_get           returns 32 bit of pseudo randomness
