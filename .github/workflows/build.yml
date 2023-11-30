@@ -1,0 +1,43 @@
+name: build-test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - '*'
+  schedule:
+    - cron: '0 3 * * 5'
+
+jobs:
+  build-test:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        board:
+        - native
+        - samr21-xpro
+        - pba-d-01-kw2x
+    env:
+      BUILD_IN_DOCKER: 1
+      WERROR: 0   # some variables are not used intentionally
+      BOARD: ${{ matrix.board }}
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - run: make -C task-01 -j all
+    - run: make -C task-02 -j all
+    - run: make -C task-03 -j all
+    - run: make -C task-04 -j all
+    - run: make -C task-05 -j all
+    - run: make -C task-06 -j all
+    - name: Run make -C task-07 -j all
+      run: |
+        make -C RIOT/examples/gnrc_minimal -j all
+        make -C RIOT/examples/gnrc_networking -j all
+    - run: make -C task-08 -j all
+    - run: make -C task-09 -j all
+
