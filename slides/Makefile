@@ -28,7 +28,7 @@ $(FILENAME).pdf: $(SRC) $(DEPS)
 	       $(foreach B,$(filter before-%.tex,$^),-B $(B)) -o $@ $(PDFLAGS) $<
 
 pictures/%.pdf: pictures/%.svg
-	inkscape --export-pdf=$@ $<
+	inkscape --export-latex=$@ $<
 
 clean:
 	rm -f $(FILENAME)* $(filter pictures/%.pdf,$(DEPS)) \
