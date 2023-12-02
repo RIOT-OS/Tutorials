@@ -2,7 +2,7 @@ SRC := slides.md
 SCRIPTDIR=scripts
 FILENAME := tutorial-slides
 DEPS := preamble-caption.tex
-PDFLAGS := -s -S -t beamer --latex-engine=xelatex --slide-level=2
+PDFLAGS := -s -t beamer+smart --pdf-engine=xelatex --slide-level=2
 PDFLAGS += --filter=$(SCRIPTDIR)/pandoc-svg
 PDFLAGS += --filter=$(SCRIPTDIR)/overlay
 DEPS += $(patsubst %.svg,%.pdf,$(wildcard pictures/6lowpan-route-over*.svg)\
@@ -28,7 +28,7 @@ $(FILENAME).pdf: $(SRC) $(DEPS)
 	       $(foreach B,$(filter before-%.tex,$^),-B $(B)) -o $@ $(PDFLAGS) $<
 
 pictures/%.pdf: pictures/%.svg
-	inkscape --export-pdf=$@ $<
+	inkscape --export-latex=$@ $<
 
 clean:
 	rm -f $(FILENAME)* $(filter pictures/%.pdf,$(DEPS)) \
