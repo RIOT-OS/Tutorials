@@ -9,7 +9,7 @@ you should be able to handle it.
 It uses the [example applications in the RIOT repository](https://github.com/RIOT-OS/RIOT/tree/master/examples).
 
 ## Task 7.1: Compile the `gnrc_minimal` application
-* Go to the [`gnrc_minimal` application](https://github.com/RIOT-OS/RIOT/tree/master/examples/gnrc_minimal)
+* Go to the [`gnrc_minimal` application](https://github.com/RIOT-OS/RIOT/tree/master/examples/networking/gnrc/gnrc_minimal)
 * Compile and run on `native`
 * Should print something like `My address is fe80::d403:24ff:fe89:2460`
 * Ping RIOT instance from Linux:
@@ -21,7 +21,7 @@ Note: on MAC use `bridge0` instead of `tapbr0`.
 
 ## Task 7.2: Extend `gnrc_minimal` application
 * Add the `gnrc_udp` module to the application's
-[Makefile](https://github.com/RIOT-OS/RIOT/blob/master/examples/gnrc_minimal/Makefile)
+[Makefile](https://github.com/RIOT-OS/RIOT/blob/master/examples/networking/gnrc/gnrc_minimal/Makefile)
 * To be able to receive packets, a [message queue](http://doc.riot-os.org/group__net__gnrc.html) must be 
   created using [msg_init_queue](https://doc.riot-os.org/group__core__msg.html#ga480e6f32c8ab18579b62a890f3fda2cd):
 
@@ -66,11 +66,11 @@ gnrc_pktbuf_release(pkt);
 2.  Use `netcat` on your host to test your application on native node.
 
 ## Task 7.3: Send your neighbor some messages again
-* Go to the [`gnrc_networking` application](https://github.com/RIOT-OS/RIOT/tree/master/examples/gnrc_networking)
+* Go to the [`gnrc_networking` application](https://github.com/RIOT-OS/RIOT/tree/master/examples/networking/gnrc/gnrc_networking)
 * Have a look in `udp.c` how packets are constructed and send
 * Compile, flash, and run on the board `BOARD=samr21-xpro make all flash term`
 * Type `help`
-* Start UDP server on port 8888 using `udp server 8888`
+* Start UDP server on port 8888 using `udp server start 8888`
 * Get your IPv6 address using `ifconfig`
 * Send your neighbor some messages using `udp send`
 
