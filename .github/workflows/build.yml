@@ -36,8 +36,8 @@ jobs:
     - run: make -C task-06 -j all
     - name: Run make -C task-07 -j all
       run: |
-        make -C RIOT/examples/gnrc_minimal -j all
-        make -C RIOT/examples/gnrc_networking -j all
+        make -C RIOT/examples/networking/gnrc/gnrc_minimal -j all
+        make -C RIOT/examples/networking/gnrc/gnrc_networking -j all
     - run: make -C task-08 -j all
     - run: make -C task-09 -j all
 
