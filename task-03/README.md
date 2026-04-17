@@ -5,8 +5,8 @@ Threads in RIOT are functions with signature
 ```C
 void *thread_handler(void *arg);
 ```
-Use [`thread_create()`](https://doc.riot-os.org/thread_8h.html#a87c94d383e64a09974fc8665f82a99b3) from
-[`thread.h`](https://doc.riot-os.org/thread_8h.html) to start it
+Use [`thread_create()`](https://api.riot-os.org/group__core__thread.html#ga7e0403a9aa86ce0ec136f6b069d4434a) from
+[`thread.h`](https://api.riot-os.org/group__core__thread.html) to start it
 ```C
 thread_create(stack, sizeof(stack),
                     THREAD_PRIORITY_MAIN - 1,
@@ -21,6 +21,6 @@ thread_create returns a kernel_pid_t type, which can be helpful to assign to a v
 * Run the application on `native`: `make all term`
 * Check your output, it should read: `I'm in "thread" now`
 
-[Read the doc](https://doc.riot-os.org/group__core__thread.html)
+[Read the doc](https://api.riot-os.org/group__core__thread.html)
 
 [next task](../task-04)
