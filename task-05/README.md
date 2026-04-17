@@ -3,7 +3,7 @@
 # Task 5: Using network devices
 
 ## RIOT's Networking architecture
-Network devices are accessed through [`netdev`](https://doc.riot-os.org/group__drivers__netdev__api.html) driver API
+Network devices are accessed through [`netdev`](https://api.riot-os.org/group__drivers__netdev__api.html) driver API
 
 ![Networking overview](../overview-net.png)
 
@@ -41,6 +41,6 @@ sudo ./../RIOT/dist/tools/tapsetup/tapsetup -c 2
 * Type `ifconfig` to get your hardware addresses
 * Use `txtsnd` to send one of your neighbors a friendly message
 
-[Read the Doc](https://doc.riot-os.org/group__drivers__netdev__api.html)
+[Read the Doc](https://api.riot-os.org/group__drivers__netdev__api.html)
 
 [next task](../task-06)
