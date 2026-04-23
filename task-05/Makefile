@@ -21,7 +21,7 @@ USEMODULE += shell_cmds_default
 USEMODULE += ps
 USEMODULE += gnrc_pktdump
 USEMODULE += gnrc_txtsnd
-USEMODULE += gnrc_netdev_default
+USEMODULE += netdev_default
 USEMODULE += auto_init_gnrc_netif
 
 include $(RIOTBASE)/Makefile.include
