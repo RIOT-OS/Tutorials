@@ -13,17 +13,15 @@ this shell command plus one for the name of the command.
 Your function must return `0` if it runs successfully and or anything else if
 an error occurs.
 
-Shell commands need to be added manually to the shell on initialization
+Shell commands need to be added manually to the shell on initialization,
+usually this is done with the macro command `SHELL_COMMAND()`.
 ```c
 #include "shell.h"
 
-static const shell_command_t shell_commands[] = {
-    { "command name", "command description", cmd_handler },
-    { NULL, NULL, NULL }
-};
+SHELL_COMMAND("command name", "command description", cmd_handler);
 
 /* ... */
-    shell_run(commands, line_buf, SHELL_DEFAULT_BUFSIZE)
+    shell_run(NULL, line_buf, SHELL_DEFAULT_BUFSIZE)
 /* ... */
 ```
 

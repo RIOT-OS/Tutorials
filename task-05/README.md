@@ -13,7 +13,7 @@ options or states.
 Note inclusion of `netdev` modules in the [Makefile](Makefile)
 
 ```Makefile
-USEMODULE += gnrc_netdev_default
+USEMODULE += netdev_default
 USEMODULE += auto_init_gnrc_netif
 ```
 
