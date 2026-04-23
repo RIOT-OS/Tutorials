@@ -2,7 +2,7 @@
 
 # 6. UDP Client / Server
 
-The transport layer (UDP, TCP, etc) is accessed through [`sock`](https://doc.riot-os.org/group__net__sock.html) driver API
+The transport layer (UDP, TCP, etc) is accessed through [`sock`](https://api.riot-os.org/group__net__sock.html) driver API
 
 ![Networking overview](../overview-net.png)
 
@@ -91,7 +91,7 @@ USEMODULE += gnrc_sock_udp
     ```
     udp <tap0-IPv6-addr> 8888 hello
     ```
-[Read the Doc](https://doc.riot-os.org/group__net__sock.html)
+[Read the Doc](https://api.riot-os.org/group__net__sock.html)
 
 ## Task 6.3 -- Exchange UDP packets with your neighbors
 * Compile, flash and run on the board `BOARD=samr21-xpro make all flash term`

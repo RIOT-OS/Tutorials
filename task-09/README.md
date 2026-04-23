@@ -4,7 +4,7 @@
 
 This task will demonstrate basic routing functionalities in RIOT provided by the [RPL](https://tools.ietf.org/html/rfc6550) (IPv6 Routing Protocol for Low-Power and Lossy Networks) routing protocol and multihop communication.
 
-It uses an adapted version of the default [`gnrc_networking`](https://github.com/RIOT-OS/RIOT/tree/master/examples/gnrc_networking) example in the RIOT repository.
+It uses an adapted version of the default [`gnrc_networking`](https://github.com/RIOT-OS/RIOT/tree/master/examples/networking/gnrc/networking) example in the RIOT repository.
 
 ## Prerequisites
 
