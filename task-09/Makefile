@@ -7,14 +7,14 @@ BOARD ?= native
 # This has to be the absolute path to the RIOT base directory:
 RIOTBASE ?= $(CURDIR)/../RIOT
 
-BOARD_INSUFFICIENT_MEMORY := airfy-beacon chronos msb-430 msb-430h nrf51dongle \
-                          nrf6310 nucleo-f103 nucleo-f334 pca10000 pca10005 spark-core \
-                          stm32f0discovery telosb weio wsn430-v1_3b wsn430-v1_4 \
-                          yunjia-nrf51822 z1 nucleo-f072
+BOARD_INSUFFICIENT_MEMORY := airfy-beacon msb-430 msb-430h nrf51dongle \
+                          nucleo-f103rb nucleo-f334r8 spark-core \
+                          stm32f0discovery telosb \
+                          yunjia-nrf51822 z1 nucleo-f072rb
 
 # Include packages that pull up and auto-init the link layer.
 # NOTE: 6LoWPAN will be included if IEEE802.15.4 devices are present
-USEMODULE += gnrc_netdev_default
+USEMODULE += netdev_default
 USEMODULE += auto_init_gnrc_netif
 # Specify the mandatory networking modules for IPv6 and UDP
 USEMODULE += gnrc_ipv6_router_default
@@ -28,7 +28,7 @@ USEMODULE += gnrc_pktdump
 USEMODULE += gnrc_icmpv6_echo
 # Add also the shell, some shell commands
 USEMODULE += shell
-USEMODULE += shell_commands
+USEMODULE += shell_cmds_default
 USEMODULE += ps
 USEMODULE += netstats_l2
 USEMODULE += netstats_ipv6
@@ -45,7 +45,7 @@ CFLAGS += -DGNRC_RPL_DEFAULT_DIO_INTERVAL_DOUBLINGS=13
 # Comment this out to disable code in RIOT that does safety checking
 # which is not needed in a production environment but helps in the
 # development process:
-CFLAGS += -DDEVELHELP
+DEVELHELP = 1
 
 # Comment this out to join RPL DODAGs even if DIOs do not contain
 # DODAG Configuration Options (see the doc for more info)
