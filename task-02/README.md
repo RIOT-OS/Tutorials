@@ -15,10 +15,12 @@ an error occurs.
 
 Shell commands need to be added manually to the shell on initialization,
 usually this is done with the macro command `SHELL_COMMAND()`.
+Please note that the command name is *not* written in quotes and can not have
+any whitespaces!
 ```c
 #include "shell.h"
 
-SHELL_COMMAND("command name", "command description", cmd_handler);
+SHELL_COMMAND(command_name, "command description", cmd_handler);
 
 /* ... */
     shell_run(NULL, line_buf, SHELL_DEFAULT_BUFSIZE)

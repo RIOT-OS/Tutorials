@@ -36,7 +36,7 @@ static msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
 
 extern int udp_cmd(int argc, char **argv);
 
-SHELL_COMMAND("udp", "send data over UDP and listen on UDP ports", udp_cmd);
+SHELL_COMMAND(udp, "send data over UDP and listen on UDP ports", udp_cmd);
 
 #ifdef MODULE_GNRC_SIXLOWPAN
 static char _stack[THREAD_STACKSIZE_MAIN];
