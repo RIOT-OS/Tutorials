@@ -93,6 +93,9 @@
     This command will compile the application, burn the image onto the board and open a
     connection to the RIOT shell.
 
-3.  Verify the output of `RIOT_BOARD` matches your hardware.
+3.  Verify the compiler output of matches your hardware, for example:
+    ```
+    Building application "Task01" for "samr21-xpro" with CPU "samd21".
+    ```
 
 [next task](../task-02)
